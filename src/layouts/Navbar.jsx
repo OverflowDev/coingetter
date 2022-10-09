@@ -11,24 +11,7 @@ import Search from '../assets/svg/search.svg'
 function Navbar() {
 
     const [open, setOpen] = useState(false)
-    const closeMenu = () => setOpen(false)
-    const [cart, setCart] = useState(1)
-    const [amount, setAmount] = useState(1)
-
-    
-    const [theme, setTheme] = useState(localStorage.theme)
-    // const [theme, setTheme] = useState('dark')
-    const colorTheme = theme === 'dark' ? 'light' : 'dark'
-    
-    useEffect(() => {
-        const rootElement = window.document.documentElement
-
-        rootElement.classList.remove(colorTheme)
-        rootElement.classList.add(theme)
-        // optional 
-        localStorage.setItem('theme', theme)
-
-    }, [theme, colorTheme])
+    const closeMenu = () => setOpen(false)  
 
   return (
     // <div>
@@ -36,7 +19,7 @@ function Navbar() {
     //     Hello
     // </div>
     <div className='overflow-hidden'>
-        <nav className="bg-inherit py-2 px-8">
+        <nav className="bg-inherit py-1">
             <div className="flex items-center text-sm justify-around">
                 
                 {/*  Menu  */}
@@ -107,7 +90,7 @@ function Navbar() {
                     </li>
                 </ul>
 
-                <ul className='md:flex hidden uppercase items-center gap-8'>
+                <ul className='md:flex hidden uppercase items-center space-x-8'>
                     {/* Cart  */}
                     <li className='py-2 flex items-center space-x-2 px-4 border-2'>
                         <img src={Usd} alt="Usd" className='h-6 w-6' />
