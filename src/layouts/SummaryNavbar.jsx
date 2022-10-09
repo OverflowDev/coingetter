@@ -2,7 +2,7 @@ import React from 'react'
 
 function SummaryNavbar() {
   return (
-    <div className='bg-summary bg-opacity-10 md:w-full w-auto py-3 px-14 flex items-center justify-between '>
+    <div className='overflow-hidden bg-summary bg-opacity-10 md:w-full w-auto py-3 px-14 flex flex-wrap items-center justify-between '>
 
         <div className='flex space-x-6'>
             <div className='flex space-x-3'>

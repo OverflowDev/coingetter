@@ -19,6 +19,8 @@ module.exports = {
         'search': '#484D58',
         'summary': '#EADDFF',
         'green': '#00BDB0',
+        'lightGreen': '#10DC78',
+        'redDown': '#F15950',
       },
       fontFamily: {
         barlow: ["Barlow", ...defaultTheme.fontFamily.sans],
