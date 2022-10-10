@@ -1,0 +1,21 @@
+import Categories from './Categories'
+import CoinsTable from './CoinsTable'
+
+function Coins() {
+    return (
+    <div className='mt-6'>
+        <div className='px-14 '>
+            <div className="flex flex-col">
+                <div className=''>
+                    <Categories />
+                </div>
+                <div>
+                    <CoinsTable />
+                </div>
+            </div>
+        </div>
+    </div>
+  )
+}
+
+export default Coins

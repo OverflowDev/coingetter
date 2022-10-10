@@ -21,6 +21,7 @@ module.exports = {
         'green': '#00BDB0',
         'lightGreen': '#10DC78',
         'redDown': '#F15950',
+        'tableDark': '#09080B',
       },
       fontFamily: {
         barlow: ["Barlow", ...defaultTheme.fontFamily.sans],
