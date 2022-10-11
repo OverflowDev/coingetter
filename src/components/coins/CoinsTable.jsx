@@ -5,115 +5,121 @@ import Ticker from '../../assets/svg/ticker.svg'
 
 function CoinsTable() {
   return (
-    <div className='mt-4'>
-        <table className="md:table-auto border-separate border-spacing-y-3 w-full">
-            <thead className='h-12 dark:bg-tableDark bg-tableDark bg-opacity-30'>
-                <tr>
-                    <th></th>
-                    <th>Coins</th>
-                    <th>Price</th>
-                    <th>1h</th>
-                    <th>4h</th>
-                    <th>24h</th>
-                    <th>Last 7 Days</th>
-                    <th>24h Volume</th>
-                    <th>Market Cap</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr className='dark:bg-summary bg-tableDark dark:bg-opacity-10 bg-opacity-20 h-16'>
-                    <td className=''>
-                        <div className='flex items-center ml-2 space-x-1'>
-                            <ion-icon name="star-outline"></ion-icon>
-                            <h1 className='text-md font-semibold'>1</h1>
-                        </div>
-                    </td>
-                    <td className=''>
-                        <div className='flex items-center space-x-3'>
-                            <div className='h-12 w-12 rounded-full bg-transparent border border-gray-500 flex items-center justify-center'>
-                                <img src={Bitcoin} alt="bitcoin" className='h-8 w-8' />
-                            </div>
-                            <div className='flex-col'>
-                                <h1 className='uppercase'>Btc</h1>
-                                <h1 className='text-gray-400 tracking-wide font-light'>Bitcoin</h1>
-                            </div>
-                        </div>
-                    </td>
-                    <td className=''>
-                        <h1 className='text-center'>$19,876</h1>
-                    </td>
-                    <td className=''>
-                        <h1 className='text-center text-red-800'>-0.14%</h1>
-                    </td>
-                    <td className=''>
-                        <h1 className='text-center text-lightGreen'>1.4%</h1>
-                    </td>
-                    <td className=''>
-                        <h1 className='text-center text-lightGreen'>12.4%</h1>
-                    </td>
-                    <td className=''>
-                        <img src={Up} alt="Up" />
-                    </td>
-                    <td className=''>
-                        <h1 className='text-center'>24,549.71M</h1>
-                    </td>
-                    <td className=''>
-                        <h1 className='text-center'>$24,549,956.71M</h1>
-                    </td>
-                    <td className='text-center'>
-                        <button className='dark:bg-gray-600 bg-gray-400 h-8 w-8 rounded-full'>
-                            <ion-icon name="ellipsis-vertical-outline"></ion-icon>
-                        </button>
-                    </td>
-                </tr>
-                <tr className='dark:bg-summary bg-tableDark dark:bg-opacity-10 bg-opacity-20 h-16'>
-                    <td className=''>
-                        <div className='flex items-center ml-2 space-x-1 mr-4'>
-                            <ion-icon name="star-outline"></ion-icon>
-                            <h1 className='text-md font-semibold'>2</h1>
-                        </div>
-                    </td>
-                    <td className=''>
-                        <div className='flex items-center space-x-3'>
-                            <div className='h-12 w-12 rounded-full bg-transparent border border-gray-500 flex items-center justify-center'>
-                                <img src={Ticker} alt="bitcoin" className='h-8 w-8' />
-                            </div>
-                            <div className='flex-col'>
-                                <h1 className='uppercase'>BNB</h1>
-                                <h1 className='text-gray-400 tracking-wide font-light'>Binance Coin</h1>
-                            </div>
-                        </div>
-                    </td>
-                    <td className=''>
-                        <h1 className='text-center'>$19,876</h1>
-                    </td>
-                    <td className=''>
-                        <h1 className='text-center text-red-800'>-0.14%</h1>
-                    </td>
-                    <td className=''>
-                        <h1 className='text-center text-lightGreen'>1.4%</h1>
-                    </td>
-                    <td className=''>
-                        <h1 className='text-center text-lightGreen'>12.4%</h1>
-                    </td>
-                    <td className=''>
-                        <img src={Down} alt="Up" />
-                    </td>
-                    <td className=''>
-                        <h1 className='text-center'>24,549.71M</h1>
-                    </td>
-                    <td className=''>
-                        <h1 className='text-center'>$24,549,956.71M</h1>
-                    </td>
-                    <td className='text-center'>
-                        <button className='dark:bg-gray-600 bg-gray-400 h-8 w-8 rounded-full'>
-                            <ion-icon name="ellipsis-vertical-outline"></ion-icon>
-                        </button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+    <div>
+        <div className='overflow-x-auto sm:-mx-6 lg:-mx-8 mt-4'>
+            <div className='py-2 inline-block min-w-full sm:px-6 lg:px-8'>
+                <div className='overflow-x-auto'>
+                    <table className="table-auto border-separate border-spacing-y-3 min-w-full">
+                        <thead className='h-12 dark:bg-tableDark bg-tableDark bg-opacity-30'>
+                            <tr>
+                                <th scope="col" className='text-sm font-medium text-gray-900 px-6 py-4 text-left'></th>
+                                <th scope="col" className='text-sm font-medium text-gray-900 px-6 py-4 text-left'>Coins</th>
+                                <th scope="col" className='text-sm font-medium text-gray-900 px-6 py-4 text-left'>Price</th>
+                                <th scope="col" className='text-sm font-medium text-gray-900 px-6 py-4 text-left'>1h</th>
+                                <th scope="col" className='text-sm font-medium text-gray-900 px-6 py-4 text-left'>4h</th>
+                                <th scope="col" className='text-sm font-medium text-gray-900 px-6 py-4 text-left'>24h</th>
+                                <th scope="col" className='text-sm font-medium text-gray-900 px-6 py-4 text-left'>Last 7D</th>
+                                <th scope="col" className='text-sm font-medium text-gray-900 px-6 py-4 text-left'>24h Volume</th>
+                                <th scope="col" className='text-sm font-medium text-gray-900 px-6 py-4 text-left'>Market Cap</th>
+                                <th scope="col" className='text-sm font-medium text-gray-900 px-6 py-4 text-left'></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr className='dark:bg-summary bg-tableDark dark:bg-opacity-10 bg-opacity-20 h-16'>
+                                <td className=' text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap'>
+                                    <div className='flex items-center ml-2 space-x-1'>
+                                        <ion-icon name="star-outline"></ion-icon>
+                                        <h1 className='text-md font-semibold'>1</h1>
+                                    </div>
+                                </td>
+                                <td className=' text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap'>
+                                    <div className='flex items-center space-x-3'>
+                                        <div className='h-12 w-12 rounded-full bg-transparent border border-gray-500 flex items-center justify-center'>
+                                            <img src={Bitcoin} alt="bitcoin" className='h-8 w-8' />
+                                        </div>
+                                        <div className='flex-col'>
+                                            <h1 className='uppercase'>Btc</h1>
+                                            <h1 className='text-gray-400 tracking-wide font-light'>Bitcoin</h1>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td className=' text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap'>
+                                    <h1 className='text-center'>$19,876</h1>
+                                </td>
+                                <td className=' text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap'>
+                                    <h1 className='text-center text-red-800'>-0.14%</h1>
+                                </td>
+                                <td className=' text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap'>
+                                    <h1 className='text-center text-lightGreen'>1.4%</h1>
+                                </td>
+                                <td className=' text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap'>
+                                    <h1 className='text-center text-lightGreen'>12.4%</h1>
+                                </td>
+                                <td className=' text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap'>
+                                    <img src={Up} alt="Up" />
+                                </td>
+                                <td className=' text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap'>
+                                    <h1 className='text-center'>24,549.71M</h1>
+                                </td>
+                                <td className=' text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap'>
+                                    <h1 className='text-center'>$24,549,956.71M</h1>
+                                </td>
+                                <td className='text-center text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap'>
+                                    <button className='dark:bg-gray-600 bg-gray-400 h-8 w-8 rounded-full'>
+                                        <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr className='dark:bg-summary bg-tableDark dark:bg-opacity-10 bg-opacity-20 h-16'>
+                                <td className=' text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap'>
+                                    <div className='flex items-center ml-2 space-x-1'>
+                                        <ion-icon name="star-outline"></ion-icon>
+                                        <h1 className='text-md font-semibold'>1</h1>
+                                    </div>
+                                </td>
+                                <td className=' text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap'>
+                                    <div className='flex items-center space-x-3'>
+                                        <div className='h-12 w-12 rounded-full bg-transparent border border-gray-500 flex items-center justify-center'>
+                                            <img src={Bitcoin} alt="bitcoin" className='h-8 w-8' />
+                                        </div>
+                                        <div className='flex-col'>
+                                            <h1 className='uppercase'>Btc</h1>
+                                            <h1 className='text-gray-400 tracking-wide font-light'>Bitcoin</h1>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td className=' text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap'>
+                                    <h1 className='text-center'>$19,876</h1>
+                                </td>
+                                <td className=' text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap'>
+                                    <h1 className='text-center text-red-800'>-0.14%</h1>
+                                </td>
+                                <td className=' text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap'>
+                                    <h1 className='text-center text-lightGreen'>1.4%</h1>
+                                </td>
+                                <td className=' text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap'>
+                                    <h1 className='text-center text-lightGreen'>12.4%</h1>
+                                </td>
+                                <td className=' text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap'>
+                                    <img src={Down} alt="Up" />
+                                </td>
+                                <td className=' text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap'>
+                                    <h1 className='text-center'>24,549.71M</h1>
+                                </td>
+                                <td className=' text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap'>
+                                    <h1 className='text-center'>$24,549,956.71M</h1>
+                                </td>
+                                <td className='text-center text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap'>
+                                    <button className='dark:bg-gray-600 bg-gray-400 h-8 w-8 rounded-full'>
+                                        <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
         {/* Pagination  */}
         <div className="flex items-center justify-center py-10 lg:px-0 sm:px-6 px-4">
             <div className="lg:w-3/5 w-full  flex items-center justify-between border-t dark:border-gray-200 border-gray-900">

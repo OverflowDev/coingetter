@@ -4,12 +4,12 @@ function SummaryNavbar() {
   return (
     <div className='overflow-hidden dark:bg-summary bg-dark dark:bg-opacity-10 bg-opacity-10 py-3 md:px-14 px-4 flex items-center justify-between '>
 
-        <div className='md:flex grid grid-cols-2 gap-2 md:space-x-10 border-2 md:px-0 px-3'>
+        <div className='md:flex grid grid-cols-2 gap-2 md:space-x-10 md:px-0 px-3'>
             <div className='flex space-x-2'>
                 <h1>Cryptos:</h1>
                 <h2 className='dark:text-green text-deepGreen font-semibold'>20,385</h2>
             </div>
-            <div className='flex space-x-2 border'>
+            <div className='flex space-x-2'>
                 <h1>Exchanges:  </h1>
                 <h2 className='dark:text-green text-deepGreen font-semibold'>20,385</h2>
             </div>

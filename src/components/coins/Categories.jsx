@@ -3,8 +3,8 @@ import Watchlist from '../../assets/svg/watchlist.svg'
 
 function Categories() {
   return (
-    <div className='flex items-center justify-between py-2'>
-        <div className='flex dark:text-gray-300 text-black'>
+    <div className='flex flex-wrap items-center justify-between py-2'>
+        <div className='flex dark:text-gray-300 text-black md:mb-0 mb-6'>
             <div className='md:flex md:space-x-8 space-x-6'>
                 <button className='text-green text-lg hover:text-teal-300 underline underline-offset-[15px] font-semibold'>
                     Cryptocurrencies
