@@ -18,6 +18,7 @@ module.exports = {
         'dark': '#141B29',
         'search': '#484D58',
         'summary': '#EADDFF',
+        'deepGreen': '#027d75',
         'green': '#00BDB0',
         'lightGreen': '#10DC78',
         'redDown': '#F15950',

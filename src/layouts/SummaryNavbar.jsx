@@ -2,42 +2,41 @@ import React from 'react'
 
 function SummaryNavbar() {
   return (
-    <div className='overflow-hidden bg-summary bg-opacity-10 md:w-full w-auto py-3 px-14 flex flex-wrap items-center justify-between '>
+    <div className='overflow-hidden dark:bg-summary bg-dark dark:bg-opacity-10 bg-opacity-10 py-3 md:px-14 px-4 flex items-center justify-between '>
 
-        <div className='flex space-x-6'>
-            <div className='flex space-x-3'>
+        <div className='md:flex grid grid-cols-2 gap-2 md:space-x-10 border-2 md:px-0 px-3'>
+            <div className='flex space-x-2'>
                 <h1>Cryptos:</h1>
-                <h2 className='text-green'>20,385</h2>
+                <h2 className='dark:text-green text-deepGreen font-semibold'>20,385</h2>
             </div>
-            <div className='flex space-x-3'>
+            <div className='flex space-x-2 border'>
                 <h1>Exchanges:  </h1>
-                <h2 className='text-green'>20,385</h2>
+                <h2 className='dark:text-green text-deepGreen font-semibold'>20,385</h2>
             </div>
-            <div className='flex space-x-3'>
+            <div className='flex space-x-2'>
                 <h1>Market Cap:  </h1>
-                <h2 className='text-green'>20,385</h2>
+                <h2 className='dark:text-green text-deepGreen font-semibold'>20,385</h2>
             </div>
-            <div className='flex space-x-3'>
+            <div className='flex space-x-2'>
                 <h1>24h Vol:  </h1>
-                <h2 className='text-green'>20,385</h2>
+                <h2 className='dark:text-green text-deepGreen font-semibold'>20,385</h2>
             </div>
-            <div className='flex space-x-3'>
+            <div className='col-span-2 flex space-x-2'>
                 <h1>Dominance:  </h1>
-                <h2 className='text-green'>
+                <h2 className='dark:text-green text-deepGreen font-semibold'>
                     BTC <span>37.4%</span>
                 </h2>
-                <h2 className='text-green'>
+                <h2 className='dark:text-green text-deepGreen font-semibold'>
                     ETH <span>18.6%</span>
                 </h2>
-                <h2 className='text-green'>
+                <h2 className='dark:text-green text-deepGreen font-semibold'>
                     Gas: <span>100 GWEI</span>
                 </h2>
             </div>
         </div>
-
-
+        
         {/* Login and SignUp  */}
-        <div className='flex gap-2'>
+        <div className='md:flex gap-2 hidden'>
             <button className='py-2 flex items-center px-6  border-2 border-green'>
                 Log In
             </button>

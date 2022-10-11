@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import {Link} from 'react-router-dom'
 import Darkmode from './Darkmode'
 
@@ -28,11 +28,11 @@ function Navbar() {
                         <ion-icon name={`${open ? 'close' : 'menu'}`}></ion-icon>
                     </div>
                     {open ? 
-                        <Link to='/' onClick={closeMenu}>
+                        <Link onClick={closeMenu}>
                             <img src={Logo} alt="Logo" className='md:cursor-pointer h-12' />
                         </Link>
                         :
-                        <Link to='/'>
+                        <Link >
                             <div className='flex items-center'>
                                 <img src={Logo} alt="Logo" className='md:cursor-pointer h-12' />
                                 <h2 className='tracking-wider text-3xl'>CoinGetter</h2>
@@ -48,9 +48,9 @@ function Navbar() {
 
                 <ul className='md:flex py-2 text-lg hidden items-center gap-8'>
                     <li>
-                        <div class="pt-2 flex items-center relative mx-auto text-gray-500">
-                            <input class="bg-search bg-opacity-20 h-10 px-5 pr-16 text-sm focus:outline-none" placeholder="Search coin name ..." />
-                            <button type="submit" class="absolute right-0 top-0 mt-5 mr-4">
+                        <div className="pt-2 flex items-center relative mx-auto dark:text-gray-500 text-tableDark">
+                            <input className="dark:bg-search bg-green dark:bg-opacity-20 bg-opacity-40 h-10 px-5 pr-16 text-sm focus:outline-none" placeholder="Search coin name ..." />
+                            <button type="submit" className="absolute right-0 top-0 mt-5 mr-4">
                                 {/* <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4 text-gray-500">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
                                 </svg> */}
@@ -109,7 +109,7 @@ function Navbar() {
                     duration-500 z-10 ${open ? 'left-0' : 'left-[-100%]'}
                 `}>
                 
-                    <li>
+                    {/* <li>
                         <Link to='/shop' className='py-7 px-3 text-4xl inline-block' onClick={closeMenu}>
                             Shop
                         </Link>
@@ -121,10 +121,9 @@ function Navbar() {
                     </li>
                     <li className=''>
                         <Link to='/profile' className="py-7 px-3 text-4xl inline-block" onClick={closeMenu}>
-                            {/* <ion-icon name="person-outline" size="large"></ion-icon> */}
                         Profile
                         </Link>
-                    </li>
+                    </li> */}
                     <li>
                         <button className='bg-lime-300 py-1 px-4 rounded-full text-gray-700 uppercase' onClick={closeMenu}>
                             Connect Wallet to have access

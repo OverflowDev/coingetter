@@ -3,7 +3,7 @@ import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 // import Navbar from './layouts/Navbar';
 // import SummaryNavbar from './layouts/SummaryNavbar';
 
-import {Navbar, SummaryNavbar, Hero, HighPoint, Coins} from './components'
+import {Navbar, SummaryNavbar, Hero, HighPoint, Coins, Subscription, Footer, FooterOne} from './components'
 
 function App() {
   return (
@@ -14,9 +14,12 @@ function App() {
         <Hero />
         <HighPoint />
         <Coins />
-        <Routes>
-          <Route path='/' />
-        </Routes>
+        <Subscription />
+        <FooterOne />
+        <Footer />
+        {/* <Routes> */}
+          {/* <Route exact path='/' element={<Navbar/>}  /> */}
+        {/* </Routes> */}
       </Router>
     </div>
   );
