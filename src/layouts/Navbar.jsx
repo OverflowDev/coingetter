@@ -20,10 +20,10 @@ function Navbar() {
     // </div>
     <div className='overflow-hidden'>
         <nav className="bg-inherit py-1">
-            <div className="flex items-center text-sm justify-around">
+            <div className="md:px-14 px-4 flex items-center justify-between text-sm ">
                 
                 {/*  Menu  */}
-                <div className='z-50 p-3 md:w-auto w-full flex items-center justify-between'>
+                <div className='z-50 md:w-auto w-full flex items-center justify-between'>
                     <div className='text-3xl md:hidden rounded-md w-8 h-8' onClick={() => setOpen(!open)}>
                         <ion-icon name={`${open ? 'close' : 'menu'}`}></ion-icon>
                     </div>

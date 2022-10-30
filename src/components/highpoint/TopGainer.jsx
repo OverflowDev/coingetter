@@ -14,7 +14,7 @@ function TopGainer() {
                         <h1 className='font-semibold text-teal-800 tracking-wider'>Top Gainer</h1>
                     </div>
                 </button>
-                <button className='py-2 ml-6'>
+                <button className='py-2 md:ml-6 ml-3'>
                     <div className='flex items-center space-x-2'>
                         <img src={Chartdown} alt="down" className='' />
                         <h1 className='font-semibold text-white dark:hover:text-gray-300 tracking-wider'>Top Loser</h1>

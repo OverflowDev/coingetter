@@ -37,7 +37,7 @@ function Categories() {
                 </button>
             </div>
         </div>
-        <div className='flex space-x-5'>
+        <div className='hidden md:flex space-x-5 '>
             <button className='border-2 flex space-x-2 py-1 px-4'>
                 <img src={Porfolio} alt="Porfolio" className='h-6 w-6' />
                 <h1>Portfolio</h1>

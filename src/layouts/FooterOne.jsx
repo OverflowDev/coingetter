@@ -3,12 +3,12 @@ import Logo from '../assets/svg/logo.svg'
 function FooterOne() {
   return (
     <>
-    <footer className="bg-inherit mt-2">
-        <div className="max-w-screen-xl py-16 px-14">
+    <footer className="bg-inherit md:mt-2 mt-10">
+        <div className="max-w-screen-xl md:py-16 md:px-14 px-6">
 
             <div className="grid grid-cols-1 lg:grid-cols-6">
                 
-                <div className="grid grid-cols-1 gap-8 lg:col-span-5 sm:grid-cols-2 lg:grid-cols-4">
+                <div className="grid grid-cols-2 gap-6 lg:col-span-5 sm:grid-cols-2 lg:grid-cols-4">
                     <div>
                         <p className="font-semibold dark:text-white text-black uppercase">
                             Company
@@ -46,7 +46,7 @@ function FooterOne() {
                     </div>
                 </div>
                 <div>
-                    <div className='flex items-center'>
+                    <div className='flex items-center md:mt-0 mt-4'>
                         <img src={Logo} alt="Logo" className='md:cursor-pointer h-12' />
                         <h2 className='tracking-wider text-3xl'>CoinGetter</h2>
                     </div>

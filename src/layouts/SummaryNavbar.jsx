@@ -3,8 +3,76 @@ import React from 'react'
 function SummaryNavbar() {
   return (
     <div className='overflow-hidden dark:bg-summary bg-dark dark:bg-opacity-10 bg-opacity-10 py-3 md:px-14 px-4 flex items-center justify-between '>
+        
+        <div className="md:hidden relative flex overflow-hidden md:space-x-10 space-x-5 md:px-56 px-3">
+            <div className="animate-marquee whitespace-nowrap">
+                <div className="flex gap-3">
+                    <div className='flex space-x-2'>
+                        <h1>Cryptos:</h1>
+                        <h2 className='dark:text-green text-deepGreen font-semibold'>20,385</h2>
+                    </div>
+                    <div className='flex space-x-2'>
+                        <h1>Exchanges:  </h1>
+                        <h2 className='dark:text-green text-deepGreen font-semibold'>20,385</h2>
+                    </div>
+                    <div className='flex space-x-2'>
+                        <h1>Market Cap:  </h1>
+                        <h2 className='dark:text-green text-deepGreen font-semibold'>20,385</h2>
+                    </div>
+                    <div className='flex space-x-2'>
+                        <h1>24h Vol:  </h1>
+                        <h2 className='dark:text-green text-deepGreen font-semibold'>20,385</h2>
+                    </div>
+                    <div className='col-span-2 flex space-x-2'>
+                        <h1>Dominance:  </h1>
+                        <h2 className='dark:text-green text-deepGreen font-semibold'>
+                            BTC <span>37.4%</span>
+                        </h2>
+                        <h2 className='dark:text-green text-deepGreen font-semibold'>
+                            ETH <span>18.6%</span>
+                        </h2>
+                        <h2 className='dark:text-green text-deepGreen font-semibold'>
+                            Gas: <span>100 GWEI</span>
+                        </h2>
+                    </div>
+                </div>
+            </div>
 
-        <div className='md:flex grid grid-cols-2 gap-2 md:space-x-10 md:px-0 px-3'>
+            <div className="absolute top-0 animate-marquee2 whitespace-nowrap">
+                <div className="flex gap-3">
+                    <div className='flex space-x-2'>
+                        <h1>Cryptos:</h1>
+                        <h2 className='dark:text-green text-deepGreen font-semibold'>20,385</h2>
+                    </div>
+                    <div className='flex space-x-2'>
+                        <h1>Exchanges:  </h1>
+                        <h2 className='dark:text-green text-deepGreen font-semibold'>20,385</h2>
+                    </div>
+                    <div className='flex space-x-2'>
+                        <h1>Market Cap:  </h1>
+                        <h2 className='dark:text-green text-deepGreen font-semibold'>20,385</h2>
+                    </div>
+                    <div className='flex space-x-2'>
+                        <h1>24h Vol:  </h1>
+                        <h2 className='dark:text-green text-deepGreen font-semibold'>20,385</h2>
+                    </div>
+                    <div className='col-span-2 flex space-x-2'>
+                        <h1>Dominance:  </h1>
+                        <h2 className='dark:text-green text-deepGreen font-semibold'>
+                            BTC <span>37.4%</span>
+                        </h2>
+                        <h2 className='dark:text-green text-deepGreen font-semibold'>
+                            ETH <span>18.6%</span>
+                        </h2>
+                        <h2 className='dark:text-green text-deepGreen font-semibold'>
+                            Gas: <span>100 GWEI</span>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div className='hidden md:flex grid grid-cols-2 gap-2 md:space-x-10 md:px-0 px-3'>
             <div className='flex space-x-2'>
                 <h1>Cryptos:</h1>
                 <h2 className='dark:text-green text-deepGreen font-semibold'>20,385</h2>

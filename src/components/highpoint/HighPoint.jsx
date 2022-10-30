@@ -38,7 +38,7 @@ function HighPoint() {
                 > */}
                     <div className='rounded md:h-64 md:w-11/12 dark:bg-gray-800 bg-gray-200 shadow-inner'>
                         {/* <Ads /> */}
-                        <img src={ads} alt="" className='object-cover h-64 w-full rounded' />
+                        <img src={ads} alt="" className='md:object-cover md:h-64 md:w-full rounded' />
                     </div>
                 {/* </div> */}
             </div>
