@@ -5,15 +5,42 @@ function Categories() {
   return (
     <div className='flex flex-wrap items-center justify-between py-2'>
         <div className='flex dark:text-gray-300 text-black md:mb-0 mb-6'>
-            <div className='md:flex md:space-x-8 space-x-6'>
+            <div className='md:flex md:space-x-8 space-x-6 hidden'>
                 <button className='text-green text-lg hover:text-teal-300 underline underline-offset-[15px] font-semibold'>
                     Cryptocurrencies
                 </button>
                 <button className='text-lg hover:text-teal-300'>
                     Categories
                 </button>
+                <button className='text-lg hover:text-teal-300'>
+                    Defi
+                </button>
+                <button className='text-lg hover:text-teal-300'>
+                    NFT
+                </button>
+                <button className='text-lg hover:text-teal-300'>
+                    Metaverse
+                </button>
+                <button className='text-lg hover:text-teal-300'>
+                    Polkadot
+                </button>
+                <button className='text-lg hover:text-teal-300'>
+                    Binance Smart Chain
+                </button>
+                <button className='text-lg hover:text-teal-300'>
+                    Solana
+                </button>
+                <button className='text-lg hover:text-teal-300'>
+                    Avalanche
+                </button>
             </div>
-            <div className='md:flex md:space-x-8 hidden'>
+            <div className='flex flex-wrap space-x-6 space-y-2 md:hidden'>
+                <button className='text-green text-lg hover:text-teal-300 underline underline-offset-[15px] font-semibold'>
+                    Cryptocurrencies
+                </button>
+                <button className='text-lg hover:text-teal-300'>
+                    Categories
+                </button>
                 <button className='text-lg hover:text-teal-300'>
                     Defi
                 </button>

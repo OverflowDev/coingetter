@@ -3,7 +3,23 @@ const coinReducer = (state, action) => {
     if(action.type === 'GET_COINS') {
         return {
             ...state,
-            coins: action.payload
+            coins: action.payload,
+            loading: false
+        }
+    }
+
+    if(action.type === 'GET_GLOBAL') {
+        return {
+            ...state,
+            global: action.payload,
+            loading: false
+        }
+    }
+
+    if(action.type === 'SET_LOADING') {
+        return {
+            ...state,
+            loading: true
         }
     }
 

@@ -8,7 +8,7 @@ import ads from '../../assets/svg/ads.svg'
 
 function HighPoint() {
   return (
-    <div className='mt-6 md:px-14 px-4'>
+    <div className='mt-2 p-12 md:px-14 px-4'>
         <h1 className='text-lg font-bold mb-4'>HighPoint</h1>
         <div className="flex justify-center">
             <div className='md:flex grid grid-cols-1 md:space-y-0 space-y-3 md:space-x-5 w-full'>
