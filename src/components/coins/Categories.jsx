@@ -34,7 +34,7 @@ function Categories() {
                     Avalanche
                 </button>
             </div>
-            <div className='flex flex-wrap space-x-6 space-y-2 md:hidden'>
+            {/* <div className='flex flex-wrap space-x-6 space-y-2 md:hidden'>
                 <button className='text-green text-lg hover:text-teal-300 underline underline-offset-[15px] font-semibold'>
                     Cryptocurrencies
                 </button>
@@ -62,9 +62,9 @@ function Categories() {
                 <button className='text-lg hover:text-teal-300'>
                     Avalanche
                 </button>
-            </div>
+            </div> */}
         </div>
-        <div className='hidden md:flex space-x-5 '>
+        <div className=' md:flex flex space-x-5 '>
             <button className='border-2 flex space-x-2 py-1 px-4'>
                 <img src={Porfolio} alt="Porfolio" className='h-6 w-6' />
                 <h1>Portfolio</h1>

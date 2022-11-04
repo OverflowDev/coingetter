@@ -28,12 +28,12 @@ export const CoinProvider = ({children}) => {
                 payload: data
             })
         }
-        // const interval = setInterval(() => {
-        //     fetchCoins()
-        //   }, 10000);
-        
-        //   return () => clearInterval(interval);
+        const interval = setInterval(() => {
             fetchCoins()
+          }, 10000);
+        
+          return () => clearInterval(interval);
+            // fetchCoins()
     }, [])
 
 
@@ -50,12 +50,12 @@ export const CoinProvider = ({children}) => {
             })
             
         }
-        // const interval = setInterval(() => {
-        //     fetchGlobalData()
-        // }, 10000);
-        
-        // return () => clearInterval(interval);
+        const interval = setInterval(() => {
             fetchGlobalData()
+        }, 10000);
+        
+        return () => clearInterval(interval);
+            // fetchGlobalData()
     }, [])
 
     // Set loading
