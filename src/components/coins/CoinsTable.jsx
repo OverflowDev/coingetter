@@ -13,7 +13,7 @@ function CoinsTable() {
     const {coins} = useContext(CoinContext)
 
     const [currentPage, setCurrentPage] = useState(1)
-    const [coinsPerPage, setCoinsPerPage] = useState(4)
+    const [coinsPerPage, setCoinsPerPage] = useState(15)
 
     const lastCoinIndex = currentPage * coinsPerPage
     const firstCoinIndex = lastCoinIndex - coinsPerPage
