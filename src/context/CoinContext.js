@@ -1,4 +1,3 @@
-import { data } from "autoprefixer";
 import { createContext, useReducer, useEffect } from "react";
 
 import coinReducer from './CoinReducer'

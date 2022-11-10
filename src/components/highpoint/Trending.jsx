@@ -1,8 +1,8 @@
 import { useContext } from 'react'
 import CoinContext from '../../context/CoinContext'
 
-import AGreen from '../../assets/svg/arrowgreen.svg'
-import ARed from '../../assets/svg/arrowred.svg'
+// import AGreen from '../../assets/svg/arrowgreen.svg'
+// import ARed from '../../assets/svg/arrowred.svg'
 
 
 function Trending() {
