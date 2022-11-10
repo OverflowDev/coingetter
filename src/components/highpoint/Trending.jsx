@@ -1,8 +1,17 @@
-import Ticker from '../../assets/svg/ticker.svg'
+import { useContext } from 'react'
+import CoinContext from '../../context/CoinContext'
+
 import AGreen from '../../assets/svg/arrowgreen.svg'
 import ARed from '../../assets/svg/arrowred.svg'
 
+
 function Trending() {
+
+    const {trending} = useContext(CoinContext)
+
+    const trends = trending?.coins
+    console.log(trends)  
+
   return (
     <div className='md:p-4 p-2'>
         <div className='flex items-center justify-between'>
@@ -33,50 +42,31 @@ function Trending() {
             </div>
         </div>
         {/* Trending coins  */}
-        <div className='flex-col mt-6 space-y-4'>
-            <div className='flex items-center justify-between'>
-                <div className='flex py-2 px-3 space-x-4 text-white'>
-                    <h1>1.</h1>
-                    <img src={Ticker} alt="ticker" />
-                    <h1 className='tracking-wider font-semibold'>BNB</h1>
-                </div>
-                <div className='flex py-2 px-3 space-x-4 text-white'>
-                    <h1 className='tracking-wider font-semibold'>$200.25</h1>
-                </div>
-                <div className='flex space-x-1 py-2 px-3'>
-                    <img src={AGreen} alt="arrow" />
-                    <h1 className='tracking-wider font-semibold text-lightGreen'>72%</h1>
-                </div>
-            </div>
-            <div className='flex items-center justify-between'>
-                <div className='flex py-2 px-3 space-x-4 text-white'>
-                    <h1>2.</h1>
-                    <img src={Ticker} alt="ticker" />
-                    <h1 className='tracking-wider font-semibold'>BNB</h1>
-                </div>
-                <div className='flex py-2 px-3 space-x-4 text-white'>
-                    <h1 className='tracking-wider font-semibold'>$200.25</h1>
-                </div>
-                <div className='flex space-x-1 py-2 px-3'>
-                    <img src={ARed} alt="arrow" />
-                    <h1 className='tracking-wider font-semibold text-redDown'>33%</h1>
-                </div>
-            </div>
-            <div className='flex items-center justify-between'>
-                <div className='flex py-2 px-3 space-x-4 text-white'>
-                    <h1>3.</h1>
-                    <img src={Ticker} alt="ticker" />
-                    <h1 className='tracking-wider font-semibold'>BNB</h1>
-                </div>
-                <div className='flex py-2 px-3 space-x-4 text-white'>
-                    <h1 className='tracking-wider font-semibold'>$200.25</h1>
-                </div>
-                <div className='flex space-x-1 py-2 px-3'>
-                    <img src={AGreen} alt="arrow" />
-                    <h1 className='tracking-wider font-semibold text-lightGreen'>55%</h1>
-                </div>
-            </div>
-        </div>
+        {
+            trending.coins?.slice(0,3).map((trend, i) => {
+                return (
+                    <div key={i} className='flex-col mt-6 space-y-4'>
+                        <div className='flex items-center justify-between'>
+                            <div className='flex py-2 px-3 space-x-4 text-white'>
+                                <h1>{i + 1}.</h1>
+                                <img src={trend.item.thumb} alt="ticker" />
+                                <h1 className='tracking-wider font-semibold'>{trend.item.symbol}</h1>
+                            </div>
+                            <div className='flex py-2 px-3 space-x-4 text-white'>
+                                <h1 className='tracking-wider font-semibold'>{trend.item.name}</h1>
+                            </div>
+                            <div className='flex py-2 px-3 space-x-4 text-white'>
+                                <h1 className='tracking-wider font-semibold text-lightGreen'>{trend.item.price_btc.toFixed(4)} btc</h1>
+                            </div>
+                            {/* <div className='flex space-x-1 py-2 px-3'>
+                                <img src={AGreen} alt="arrow" />
+                                <h1 className='tracking-wider font-semibold text-lightGreen'>72%</h1>
+                            </div> */}
+                        </div>
+                    </div>
+                )
+            })
+        }
     </div>
   )
 }

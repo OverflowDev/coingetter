@@ -11,6 +11,7 @@ export const CoinProvider = ({children}) => {
         loading: false,
         coins: [],
         global: {},
+        trending: {},
     }
 
     // const [state, dispatch] = useReducer(coinReducer, initialState)
@@ -52,6 +53,27 @@ export const CoinProvider = ({children}) => {
         }
         const interval = setInterval(() => {
             fetchGlobalData()
+        }, 10000);
+        
+        return () => clearInterval(interval);
+            // fetchGlobalData()
+    }, [])
+
+    // Fetch Trending 
+    useEffect(() => {
+        const fetchTredndingData = async () => {
+            setLoading()
+            const response = await fetch('https://api.coingecko.com/api/v3/search/trending')
+            const data = await response.json()
+            
+            dispatch({
+                type: 'GET_TRENDING',
+                payload: data
+            })
+            
+        }
+        const interval = setInterval(() => {
+            fetchTredndingData()
         }, 10000);
         
         return () => clearInterval(interval);

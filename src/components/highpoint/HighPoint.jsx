@@ -1,16 +1,37 @@
-import React from 'react'
+import {useState} from 'react'
 
 // import Ads from './Ads'
 import TopGainer from './TopGainer'
 import Trending from './Trending'
 
-import ads from '../../assets/svg/ads.svg'
+// import ads from '../../assets/svg/ads.svg'
+import ads from '../../assets/png/b9013f82a6e34612924105529705d9df.jpeg'
 
 function HighPoint() {
+
+    const [isActive, setIsActive] = useState(false)
+
+    const toggleClass = ' transform translate-x-5';
+
   return (
     <div className='mt-2 p-12 md:px-14 px-4'>
-        <h1 className='text-lg font-bold mb-4'>HighPoint</h1>
-        <div className="flex justify-center">
+        {/* <div className='mb-4'> */}
+        <div className="flex items-center mb-4">
+            <h1 className='text-lg font-bold mr-2'>HighLight</h1>
+            <div
+                className="md:w-14 md:h-7 w-12 h-6 flex items-center bg-gray-300 rounded-full p-1 cursor-pointer"
+                onClick={() => {
+                    setIsActive(!isActive);
+                }}
+            >
+                {/* Switch */}
+                <div
+                    className =  {`bg-white md:w-7 md:h-7 h-5 w-5 rounded-full shadow-md transform ${isActive ? toggleClass : null }` }
+                >
+                </div>
+            </div>
+        </div>
+        <div className={` ${isActive ? 'hidden' : 'flex justify-center'}`}>
             <div className='md:flex grid grid-cols-1 md:space-y-0 space-y-3 md:space-x-5 w-full'>
                 <div className=' rounded shadow-inner
                     dark:bg-gradient-to-br dark:from-red-500 dark:via-gray-800 

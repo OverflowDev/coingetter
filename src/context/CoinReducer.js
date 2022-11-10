@@ -16,6 +16,14 @@ const coinReducer = (state, action) => {
         }
     }
 
+    if(action.type === 'GET_TRENDING') {
+        return {
+            ...state,
+            trending: action.payload,
+            loading: false
+        }
+    }
+
     if(action.type === 'SET_LOADING') {
         return {
             ...state,

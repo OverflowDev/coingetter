@@ -32,9 +32,9 @@ function CoinsTable() {
                                       <th scope="col" className='text-sm font-medium uppercase'></th>
                                       <th scope="col" className='text-sm font-medium uppercase'>Coins</th>
                                       <th scope="col" className='text-sm font-medium uppercase'>Price</th>
-                                      <th scope="col" className='text-sm font-medium uppercase'>24h</th>
-                                      <th scope="col" className='text-sm font-medium uppercase'>Price(24h)</th>
-                                      <th scope="col" className='text-sm font-medium uppercase'>Price(24h)</th>
+                                      <th scope="col" className='text-sm font-medium uppercase'>24h (%)</th>
+                                      <th scope="col" className='text-sm font-medium uppercase'>Price(24h) <i className='text-red-500'><ion-icon name="caret-down-outline"></ion-icon></i></th>
+                                      <th scope="col" className='text-sm font-medium uppercase'>Price(24h) <i className='text-green'><ion-icon name="caret-up-outline"></ion-icon></i></th>
                                       <th scope="col" className='text-sm font-medium uppercase'>Ath</th>
                                       <th scope="col" className='text-sm font-medium uppercase'>Market Cap</th>
                                       <th scope="col" className='text-sm font-medium uppercase'>Market Cap (24h %)</th>
@@ -64,7 +64,7 @@ function CoinsTable() {
                                                       </div>
                                                   </td>
                                                   <td className=' text-sm font-light px-6 py-4 whitespace-nowrap'>
-                                                      <h1 className='text-center'>${coin.current_price.toLocaleString()}</h1>
+                                                      <h1 className='text-center'>{coin.current_price.toLocaleString("en-US", {style:"currency", currency:"USD"})}</h1>
                                                   </td>
                                                   <td className=' text-sm font-light px-6 py-4 whitespace-nowrap'>
                                                       <h1 className='text-center '>
