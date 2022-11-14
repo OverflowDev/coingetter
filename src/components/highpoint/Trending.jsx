@@ -10,6 +10,7 @@ function Trending() {
     const {trending, loading} = useContext(CoinContext)
 
     // const trends = trending?.coins
+    if(!trending) return null
 
   return (
     <div className='md:p-4 p-2'>
@@ -74,14 +75,14 @@ function Trending() {
                                 <div className='flex items-center justify-between'>
                                     <div className='flex py-2 px-3 space-x-4 dark:text-white'>
                                         <h1>{i + 1}.</h1>
-                                        <img src={trend.item.thumb} alt="ticker" />
-                                        <h1 className='tracking-wider font-semibold'>{trend.item.symbol}</h1>
+                                        <img src={trend?.item.thumb} alt="ticker" />
+                                        <h1 className='tracking-wider font-semibold'>{trend?.item.symbol}</h1>
                                     </div>
                                     <div className='flex py-2 px-3 space-x-4 dark:text-white'>
-                                        <h1 className='tracking-wider font-semibold'>{trend.item.name}</h1>
+                                        <h1 className='tracking-wider font-semibold'>{trend?.item.name}</h1>
                                     </div>
                                     <div className='flex py-2 px-3 space-x-4 dark:text-white'>
-                                        <h1 className='tracking-wider font-semibold dark:text-lightGreen text-green'>{trend.item.price_btc.toFixed(4)} btc</h1>
+                                        <h1 className='tracking-wider font-semibold dark:text-lightGreen text-green'>{trend?.item.price_btc.toFixed(4)} btc</h1>
                                     </div>
                                     {/* <div className='flex space-x-1 py-2 px-3'>
                                         <img src={AGreen} alt="arrow" />

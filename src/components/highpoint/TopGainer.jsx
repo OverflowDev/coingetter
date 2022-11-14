@@ -10,6 +10,11 @@ function TopGainer() {
 
     const {exchanges, loading} = useContext(CoinContext)
 
+    // const exchange = exchanges?.slice(0,3)
+
+    if(!exchanges) return null
+
+
   return (
     <div className='p-4'>
         <div className='flex items-center justify-between'>
@@ -37,10 +42,10 @@ function TopGainer() {
 
             {/* exchanges coins  */}
 
-            {loading ? 
+            {/* {loading ? 
                 <div>
                     {
-                        exchanges?.slice(0,3).map((trend, i) => {
+                        exchange.map((ex, i) => {
                             return (
                                 <div key={i} className='flex-col mt-3 space-y-4'>
                                     <div className='flex items-center justify-between'>
@@ -61,17 +66,17 @@ function TopGainer() {
                 :
                 <div>
                     {
-                        exchanges?.slice(0,3).map((exchange, i) => {
+                        exchange.map((ex, i) => {
                             return (
                                 <div key={i} className='flex-col items-center mt-3 space-y-4'>
                                     <div className='flex items-center justify-between'>
                                         <div className='flex items-center py-2 px-3 space-x-4 dark:text-white'>
                                             <h1>{i + 1}.</h1>
-                                            <img src={exchange?.image} alt="ticker" className='w-8 h-8 rounded-full' />
-                                            <h1 className='tracking-wider font-semibold'>{exchange?.name}</h1>
+                                            <img src={ex?.image} alt="ticker" className='w-8 h-8 rounded-full' />
+                                            <h1 className='tracking-wider font-semibold'>{ex?.name}</h1>
                                         </div>
-                                        <div className='flex py-2 px-3 space-x-4 dark:text-dark'>
-                                            <h1 className='tracking-wider font-semibold'>{exchange?.year_established}</h1>
+                                        <div className='flex py-2 px-3 space-x-4 dark:text-white text-dark'>
+                                            <h1 className='tracking-wider font-semibold'>{ex?.year_established}</h1>
                                         </div>
                                     </div>
                                 </div>
@@ -79,7 +84,7 @@ function TopGainer() {
                         })
                     }
                 </div>
-            }
+            } */}
     </div>
   )
 }

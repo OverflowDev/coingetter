@@ -30,16 +30,16 @@ function CoinsTable() {
                                 <thead className='h-12 dark:bg-tableDark dark:bg-opacity-50 bg-tableDark bg-opacity-10 dark:text-white shadow-inner'>
                                     {loading ? 
                                         <tr className='animate pulse'>
-                                            <th scope="col" className=''></th>
-                                            <th scope="col" className=''>Coins</th>
-                                            <th scope="col" className=''>Price</th>
-                                            <th scope="col" className=''>24h (%)</th>
-                                            <th scope="col" className=''>Price(24h) <i className='text-red-500'><ion-icon name="caret-down-outline"></ion-icon></i></th>
-                                            <th scope="col" className=''>Price(24h) <i className='text-green'><ion-icon name="caret-up-outline"></ion-icon></i></th>
-                                            <th scope="col" className=''>Ath</th>
-                                            <th scope="col" className=''>Market Cap</th>
-                                            <th scope="col" className=''>Market Cap (24h %)</th>
-                                            <th scope="col" className=''></th>
+                                            <th scope="col" className='text-sm font-semibold tracking-wider uppercase'></th>
+                                            <th scope="col" className='text-sm font-semibold tracking-wider uppercase'>Coins</th>
+                                            <th scope="col" className='text-sm font-semibold tracking-wider uppercase'>Price</th>
+                                            <th scope="col" className='text-sm font-semibold tracking-wider uppercase'>24h (%)</th>
+                                            <th scope="col" className='text-sm font-semibold tracking-wider uppercase'>Price(24h) <i className='text-red-500'><ion-icon name="caret-down-outline"></ion-icon></i></th>
+                                            <th scope="col" className='text-sm font-semibold tracking-wider uppercase'>Price(24h) <i className='text-green'><ion-icon name="caret-up-outline"></ion-icon></i></th>
+                                            <th scope="col" className='text-sm font-semibold tracking-wider uppercase'>Ath</th>
+                                            <th scope="col" className='text-sm font-semibold tracking-wider uppercase'>Market Cap</th>
+                                            <th scope="col" className='text-sm font-semibold tracking-wider uppercase'>Market Cap (24h %)</th>
+                                            <th scope="col" className='text-sm font-semibold tracking-wider uppercase'></th>
                                         </tr>
                                         : 
                                         <tr>

@@ -29,12 +29,12 @@ export const CoinProvider = ({children}) => {
                 payload: data
             })
         }
-        const interval = setInterval(() => {
-            fetchCoins()
-          }, 10000);
+        // const interval = setInterval(() => {
+        //     fetchCoins()
+        //   }, 10000);
         
-          return () => clearInterval(interval);
-            // fetchCoins()
+        //   return () => clearInterval(interval);
+            fetchCoins()
     }, [])
 
 
@@ -51,12 +51,12 @@ export const CoinProvider = ({children}) => {
             })
             
         }
-        const interval = setInterval(() => {
-            fetchGlobalData()
-        }, 10000);
+        // const interval = setInterval(() => {
+        //     fetchGlobalData()
+        // }, 10000);
         
-        return () => clearInterval(interval);
-            // fetchGlobalData()
+        // return () => clearInterval(interval);
+            fetchGlobalData()
     }, [])
 
     // Fetch Trending 
@@ -72,12 +72,12 @@ export const CoinProvider = ({children}) => {
             })
             
         }
-        const interval = setInterval(() => {
-            fetchTredndingData()
-        }, 10000);
+        // const interval = setInterval(() => {
+        //     fetchTredndingData()
+        // }, 10000);
         
-        return () => clearInterval(interval);
-        // fetchTredndingData()
+        // return () => clearInterval(interval);
+        fetchTredndingData()
     }, [])
 
     // Fetch Exchange
@@ -93,12 +93,12 @@ export const CoinProvider = ({children}) => {
             })
             
         }
-        const interval = setInterval(() => {
-            fetchExchanges()
-        }, 10000);
+        // const interval = seInterval(() => {
+        //     fetchExchanges()
+        // }, 10000);
         
-        return () => clearInterval(interval);
-        // fetchExchanges()
+        // return () => clearInterval(interval);t
+        fetchExchanges()
     }, [])
 
     // Set loading
