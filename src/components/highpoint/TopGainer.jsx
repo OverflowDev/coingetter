@@ -17,7 +17,7 @@ function TopGainer() {
                 <button className='py-2 px-2'>
                     <div className='flex items-center space-x-2'>
                         <img src={Chartup} alt="up" className='' />
-                        <h1 className='font-semibold dark:text-white text-teal-800 tracking-wider'>Top Exchanges</h1>
+                        <h1 className='font-semibold dark:text-white text-gray-900 tracking-wider'>Top Exchanges</h1>
                     </div>
                 </button>
                 {/* <button className='py-2 md:ml-6 ml-3'>
@@ -30,7 +30,7 @@ function TopGainer() {
 
             <div>
                 <button className='py-2 px-3'>
-                    <h1 className='font-semibold text-green hover:text-teal-200 tracking-wider'>View All</h1>
+                    <h1 className='font-semibold dark:text-green dark:hover:text-teal-200 tracking-wider'>View All</h1>
                 </button>
             </div>
         </div>
@@ -65,12 +65,12 @@ function TopGainer() {
                             return (
                                 <div key={i} className='flex-col items-center mt-3 space-y-4'>
                                     <div className='flex items-center justify-between'>
-                                        <div className='flex items-center py-2 px-3 space-x-4 text-white'>
+                                        <div className='flex items-center py-2 px-3 space-x-4 dark:text-white'>
                                             <h1>{i + 1}.</h1>
                                             <img src={exchange?.image} alt="ticker" className='w-8 h-8 rounded-full' />
                                             <h1 className='tracking-wider font-semibold'>{exchange?.name}</h1>
                                         </div>
-                                        <div className='flex py-2 px-3 space-x-4 text-white'>
+                                        <div className='flex py-2 px-3 space-x-4 dark:text-dark'>
                                             <h1 className='tracking-wider font-semibold'>{exchange?.year_established}</h1>
                                         </div>
                                     </div>

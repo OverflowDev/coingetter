@@ -9,7 +9,7 @@ function SummaryNavbar() {
     if (!global) return null
 
   return (
-    <div className='overflow-hidden dark:bg-summary bg-dark dark:bg-opacity-10 bg-opacity-10 py-3 md:px-14 px-4 flex items-center justify-between '>
+    <div className='overflow-hidden dark:bg-summary bg-dark dark:bg-opacity-10 bg-opacity-10 py-3 md:px-14 px-4 flex items-center justify-between shadow-inner'>
         {/* Small screen */}
         {loading 
             ? 

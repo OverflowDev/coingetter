@@ -93,10 +93,19 @@ function Navbar() {
 
                 {/* Mobile Menu  */}
                 <ul className={`
-                   dark:text-white text-dark lg:hidden dark:bg-dark bg-white absolute w-full h-screen bottom-0 py-24 pl-4
+                   dark:text-white text-dark lg:hidden dark:bg-dark bg-white absolute w-full h-screen bottom-0 py-24 px-12
                     delay-100 duration-500 z-10 ${open ? 'left-0' : 'left-[-100%]'}
                 `}>
                 
+                    <li>
+                        <div className="pt-2 flex items-center relative mx-auto dark:text-gray-300 text-tableDark">
+                            <input className="w-full dark:bg-gray-300 bg-green dark:bg-opacity-20 bg-opacity-40 h-10 px-3 text-sm focus:outline-none" placeholder="Search coin name ..." />
+                            <button type="submit" className="absolute right-0 top-0 mt-5 mr-4">
+                                <img src={Search} alt="search" />
+                            </button>
+                        </div>
+                        
+                    </li>
                     <li className='py-3 text-center px-3 text-2xl' onClick={closeMenu}>
                         Cryptocurrencies
                     </li>

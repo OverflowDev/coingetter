@@ -35,7 +35,7 @@ function HighPoint() {
                 </div>
             </div>
         </div>
-        <div className={` ${isActive ? 'hidden' : 'flex justify-center'}`}>
+        <div className={` ${isActive ? 'hidden transition ease-out duration-500 delay-300' : 'flex justify-center transition ease-in duration-500 delay-300'}`}>
             <div className='lg:flex grid grid-cols-1 lg:space-y-0 space-y-3 lg:space-x-5 w-full'>
                 {/* Trending  */}
                 {loading ?
@@ -46,10 +46,10 @@ function HighPoint() {
                     <div className=' rounded shadow-inner
                         dark:bg-gradient-to-br dark:from-red-500 dark:via-gray-800 
                         bg-gradient-to-br from-red-500 via-gray-800 
-                        p-[0.8px]
+                        dark:p-[0.8px]
                         lg:h-64 lg:w-11/12'
                     >
-                        <div className='h-full w-full dark:bg-gray-800 bg-gray-600 rounded shadow-inner'>
+                        <div className='h-full w-full dark:bg-gray-800 bg-gray-50 rounded shadow-inner'>
                             <Trending />
                         </div>
                     </div>
@@ -63,10 +63,10 @@ function HighPoint() {
                     <div className='rounded shadow-inner
                         dark:bg-gradient-to-br dark:from-green dark:via-transparent dark:to-transparent 
                         bg-gradient-to-br from-green via-transparent to-transparent 
-                        p-[0.8px]
+                        dark:p-[0.8px]
                         lg:h-64 lg:w-11/12'
                     >
-                        <div className='rounded h-full w-full dark:bg-gray-800 bg-gray-600 shadow-inner'>
+                        <div className='rounded h-full w-full dark:bg-gray-800 bg-gray-50 shadow-inner'>
                             <TopGainer />
                         </div>
                     </div>

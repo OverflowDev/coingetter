@@ -27,7 +27,7 @@ function CoinsTable() {
                     <div className='py-2 inline-block min-w-full sm:px-6 lg:px-8'>
                         <div className='overflow-x-auto'>
                             <table className="table-fixed border-separate border-spacing-y-3 min-w-full whitespace-nowrap ">
-                                <thead className='h-12 dark:bg-tableDark dark:bg-opacity-50 bg-tableDark bg-opacity-30 text-white'>
+                                <thead className='h-12 dark:bg-tableDark dark:bg-opacity-50 bg-tableDark bg-opacity-10 dark:text-white shadow-inner'>
                                     {loading ? 
                                         <tr className='animate pulse'>
                                             <th scope="col" className=''></th>
@@ -43,16 +43,16 @@ function CoinsTable() {
                                         </tr>
                                         : 
                                         <tr>
-                                            <th scope="col" className='text-sm font-medium uppercase'></th>
-                                            <th scope="col" className='text-sm font-medium uppercase'>Coins</th>
-                                            <th scope="col" className='text-sm font-medium uppercase'>Price</th>
-                                            <th scope="col" className='text-sm font-medium uppercase'>24h (%)</th>
-                                            <th scope="col" className='text-sm font-medium uppercase'>Price(24h) <i className='text-red-500'><ion-icon name="caret-down-outline"></ion-icon></i></th>
-                                            <th scope="col" className='text-sm font-medium uppercase'>Price(24h) <i className='text-green'><ion-icon name="caret-up-outline"></ion-icon></i></th>
-                                            <th scope="col" className='text-sm font-medium uppercase'>Ath</th>
-                                            <th scope="col" className='text-sm font-medium uppercase'>Market Cap</th>
-                                            <th scope="col" className='text-sm font-medium uppercase'>Market Cap (24h %)</th>
-                                            <th scope="col" className='text-sm font-medium uppercase'></th>
+                                            <th scope="col" className='text-sm font-semibold tracking-wider uppercase'></th>
+                                            <th scope="col" className='text-sm font-semibold tracking-wider uppercase'>Coins</th>
+                                            <th scope="col" className='text-sm font-semibold tracking-wider uppercase'>Price</th>
+                                            <th scope="col" className='text-sm font-semibold tracking-wider uppercase'>24h (%)</th>
+                                            <th scope="col" className='text-sm font-semibold tracking-wider uppercase'>Price(24h) <i className='text-red-500'><ion-icon name="caret-down-outline"></ion-icon></i></th>
+                                            <th scope="col" className='text-sm font-semibold tracking-wider uppercase'>Price(24h) <i className='text-green'><ion-icon name="caret-up-outline"></ion-icon></i></th>
+                                            <th scope="col" className='text-sm font-semibold tracking-wider uppercase'>Ath</th>
+                                            <th scope="col" className='text-sm font-semibold tracking-wider uppercase'>Market Cap</th>
+                                            <th scope="col" className='text-sm font-semibold tracking-wider uppercase'>Market Cap (24h %)</th>
+                                            <th scope="col" className='text-sm font-semibold tracking-wider uppercase'></th>
                                         </tr>
                                     }
                                 </thead>
@@ -109,12 +109,12 @@ function CoinsTable() {
                                         }
                                     </tbody>
                                     :
-                                    <tbody>
+                                    <tbody clas>
                                         {
                                             currentCoins.map((coin, i) => {
                                                 return (
-                                                    <tr key={i} className='dark:bg-summary bg-tableDark dark:bg-opacity-10 bg-opacity-20 h-16'>
-                                                        <td className=' text-sm font-light px-6 py-4 whitespace-nowrap'>
+                                                    <tr key={i} className='dark:bg-summary bg-tableDark dark:bg-opacity-10 bg-opacity-10 shadow-inner h-16'>
+                                                        <td className='dark:text-white text-sm font-light px-6 py-4 whitespace-nowrap'>
                                                             <div className='flex items-center ml-2 space-x-1'>
                                                                 <ion-icon name="star-outline"></ion-icon>
                                                                 <h1 className='text-md font-semibold'>{coin.market_cap_rank}</h1>
@@ -122,12 +122,12 @@ function CoinsTable() {
                                                         </td>
                                                         <td className=' text-sm font-light px-6 py-4 whitespace-nowrap'>
                                                             <div className='flex items-center space-x-3'>
-                                                                <div className='h-12 w-12 rounded-full bg-transparent border border-gray-500 flex items-center justify-center'>
+                                                                <div className='h-12 w-12 rounded-full bg-transparent border dark:border-gray-500 border-gray-800 flex items-center justify-center'>
                                                                     <img src={coin.image} alt="bitcoin" className='h-8 w-8' />
                                                                 </div>
-                                                                <div className='flex-col'>
-                                                                    <h1 className='uppercase'>{coin.symbol}</h1>
-                                                                    <h1 className='text-gray-400 tracking-wide font-light'>{coin.name}</h1>
+                                                                <div className='flex-col dark:text-gray-400 text-gray-800'>
+                                                                    <h1 className='uppercase font-semibold'>{coin.symbol}</h1>
+                                                                    <h1 className=' tracking-wide font-light'>{coin.name}</h1>
                                                                 </div>
                                                             </div>
                                                         </td>
@@ -138,7 +138,7 @@ function CoinsTable() {
                                                             <h1 className='text-center '>
                                                                 {
                                                                     coin.price_change_percentage_24h < 0 ? (
-                                                                        <i className='text-red-500 not-italic'>{coin.price_change_percentage_24h.toFixed(2)}%</i>
+                                                                        <i className='dark:text-red-500 text-red-600 not-italic'>{coin.price_change_percentage_24h.toFixed(2)}%</i>
                                                                         ) : (
                                                                         <i className='text-lightGreen not-italic'>{coin.price_change_percentage_24h.toFixed(2)}%</i>
                                                                     )
@@ -146,10 +146,10 @@ function CoinsTable() {
                                                             </h1>
                                                         </td>
                                                         <td className=' text-sm font-light px-6 py-4 whitespace-nowrap'>
-                                                            <h1 className='text-center text-red-500'>${coin.low_24h.toLocaleString()}</h1>
+                                                            <h1 className='text-center dark:text-red-500 text-red-600'>${coin.low_24h.toLocaleString()}</h1>
                                                         </td>
                                                         <td className=' text-sm font-light px-6 py-4 whitespace-nowrap'>
-                                                            <h1 className='text-center text-lightGreen'>${coin.high_24h.toLocaleString()}</h1>
+                                                            <h1 className='text-center dark:text-lightGreen text-green'>${coin.high_24h.toLocaleString()}</h1>
                                                         </td>
                                                         <td className=' text-sm font-light px-6 py-4 whitespace-nowrap'>
                                                             <h1 className='text-center'>${coin.ath.toLocaleString()}</h1>
@@ -162,9 +162,9 @@ function CoinsTable() {
                                                             <h1 className='text-center '>
                                                                 {
                                                                     coin.market_cap_change_percentage_24h < 0 ? (
-                                                                        <i className='text-red-500 not-italic'>{coin.market_cap_change_percentage_24h.toFixed(2)}%</i>
+                                                                        <i className='dark:text-red-500 text-red-600 not-italic'>{coin.market_cap_change_percentage_24h.toFixed(2)}%</i>
                                                                         ) : (
-                                                                        <i className='text-lightGreen not-italic'>{coin.market_cap_change_percentage_24h.toFixed(2)}%</i>
+                                                                        <i className='dark:text-lightGreen text-green not-italic'>{coin.market_cap_change_percentage_24h.toFixed(2)}%</i>
                                                                     )
                                                                 }
                                                             </h1>

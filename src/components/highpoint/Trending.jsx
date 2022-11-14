@@ -21,7 +21,7 @@ function Trending() {
                             <path strokeLinecap="round" strokeLinejoin="round" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z" />
                             <path strokeLinecap="round" strokeLinejoin="round" d="M12 18a3.75 3.75 0 00.495-7.467 5.99 5.99 0 00-1.925 3.546 5.974 5.974 0 01-2.133-1A3.75 3.75 0 0012 18z" />
                         </svg> 
-                        <h1 className='font-semibold dark:text-white text-teal-800 tracking-wider'>Trending</h1>
+                        <h1 className='font-semibold dark:text-white text-gray-900 tracking-wider'>Trending</h1>
                     </div>
                 </button>
                 {/* <button className='py-2 md:ml-6 ml-3'>
@@ -36,7 +36,7 @@ function Trending() {
 
             <div>
                 <button className='py-2 px-3'>
-                    <h1 className='font-semibold text-green hover:text-teal-200 tracking-wider'>View All</h1>
+                    <h1 className='font-semibold dark:text-green dark:hover:text-teal-200 tracking-wider'>View All</h1>
                 </button>
             </div>
         </div>
@@ -48,7 +48,7 @@ function Trending() {
                         return (
                             <div key={i} className='flex-col mt-3 space-y-4'>
                                 <div className='flex items-center justify-between'>
-                                    <div className='flex items-center py-2 px-3 space-x-4 text-white'>
+                                    <div className='flex items-center py-2 px-3 space-x-4'>
                                         <div className='md:h-4 md:w-4 h-4 w-4  rounded animate-pulse dark:bg-gray-500 bg-dark'></div>
                                         <div className='md:h-8 md:w-8 h-8 w-8 rounded-full animate-pulse dark:bg-gray-500 bg-dark'></div>
                                         <div className='md:h-4 md:w-16 rounded animate-pulse dark:bg-gray-500 bg-dark'></div>
@@ -72,16 +72,16 @@ function Trending() {
                         return (
                             <div key={i} className='flex-col mt-6 space-y-4'>
                                 <div className='flex items-center justify-between'>
-                                    <div className='flex py-2 px-3 space-x-4 text-white'>
+                                    <div className='flex py-2 px-3 space-x-4 dark:text-white'>
                                         <h1>{i + 1}.</h1>
                                         <img src={trend.item.thumb} alt="ticker" />
                                         <h1 className='tracking-wider font-semibold'>{trend.item.symbol}</h1>
                                     </div>
-                                    <div className='flex py-2 px-3 space-x-4 text-white'>
+                                    <div className='flex py-2 px-3 space-x-4 dark:text-white'>
                                         <h1 className='tracking-wider font-semibold'>{trend.item.name}</h1>
                                     </div>
-                                    <div className='flex py-2 px-3 space-x-4 text-white'>
-                                        <h1 className='tracking-wider font-semibold text-lightGreen'>{trend.item.price_btc.toFixed(4)} btc</h1>
+                                    <div className='flex py-2 px-3 space-x-4 dark:text-white'>
+                                        <h1 className='tracking-wider font-semibold dark:text-lightGreen text-green'>{trend.item.price_btc.toFixed(4)} btc</h1>
                                     </div>
                                     {/* <div className='flex space-x-1 py-2 px-3'>
                                         <img src={AGreen} alt="arrow" />
