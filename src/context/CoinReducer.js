@@ -24,9 +24,17 @@ const coinReducer = (state, action) => {
         }
     }
 
-    if(action.type === 'SET_LOADING') {
+    if(action.type === 'GET_EXCHANGES') {
         return {
             ...state,
+            exchanges: action.payload,
+            loading: false
+        }
+    }
+
+    if(action.type === 'SET_LOADING') {
+        return {
+            ...state, 
             loading: true
         }
     }

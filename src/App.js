@@ -6,23 +6,23 @@ import { CoinProvider } from './context/CoinContext';
 
 function App() {
   return (
-    <CoinProvider>
-      <div className="font-barlow dark:bg-dark dark:text-white bg-white text-dark ">
-        <Router>
-          <Navbar />
-          <SummaryNavbar />
-          <Hero />
-          <HighPoint />
-          <Coins />
-          <Subscription />
-          <FooterOne />
-          <Footer />
-          {/* <Routes> */}
-            {/* <Route exact path='/' element={<Navbar/>}  /> */}
-          {/* </Routes> */}
-        </Router>
-      </div>
-    </CoinProvider>
+      <CoinProvider>
+        <div className="font-barlow dark:bg-dark dark:text-white bg-white text-dark ">
+          <Router>
+            <Navbar />
+            <SummaryNavbar />
+            <Hero />
+            <HighPoint />
+            <Coins />
+            <Subscription />
+            <FooterOne />
+            <Footer />
+            {/* <Routes> */}
+              {/* <Route exact path='/' element={<Navbar/>}  /> */}
+            {/* </Routes> */}
+          </Router>
+        </div>
+      </CoinProvider>
   );
 }
 

@@ -19,7 +19,7 @@ function Darkmode() {
   return (
         <div>
             <button 
-            className='dark:text-white '
+            className='dark:text-white text-dark'
             onClick={() => setTheme(colorTheme)}
             >
             {

@@ -5,7 +5,7 @@ function Categories() {
   return (
     <div className='flex flex-wrap items-center justify-between py-2'>
         <div className='flex dark:text-gray-300 text-black md:mb-0 mb-6'>
-            <div className='md:flex md:space-x-8 space-x-6 hidden'>
+            <div className='lg:flex md:space-x-8 space-x-6 hidden'>
                 <button className='text-green text-lg hover:text-teal-300 underline underline-offset-[15px] font-semibold'>
                     Cryptocurrencies
                 </button>
@@ -64,7 +64,7 @@ function Categories() {
                 </button>
             </div> */}
         </div>
-        <div className=' md:flex flex space-x-5 '>
+        <div className='md:flex flex space-x-5 '>
             <button className='border-2 flex space-x-2 py-1 px-4'>
                 <img src={Porfolio} alt="Porfolio" className='h-6 w-6' />
                 <h1>Portfolio</h1>

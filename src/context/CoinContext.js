@@ -7,10 +7,11 @@ const CoinContext = createContext()
 export const CoinProvider = ({children}) => {
 
     const initialState = {
-        loading: false,
         coins: [],
         global: {},
         trending: {},
+        exchanges: {},
+        loading: true,
     }
 
     // const [state, dispatch] = useReducer(coinReducer, initialState)
@@ -19,7 +20,7 @@ export const CoinProvider = ({children}) => {
     // Fetch All coins or limit it 
     useEffect(() => {     
         const fetchCoins = async () => {
-            setLoading()
+            // setLoading()
             const response = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=1&sparkline=false')
             const data = await response.json()
 
@@ -40,7 +41,7 @@ export const CoinProvider = ({children}) => {
     // Fetch Crypto Global Data 
     useEffect(() => {
         const fetchGlobalData = async () => {
-            setLoading()
+            // setLoading()
             const response = await fetch('https://api.coingecko.com/api/v3/global')
             const data = await response.json()
             
@@ -61,7 +62,7 @@ export const CoinProvider = ({children}) => {
     // Fetch Trending 
     useEffect(() => {
         const fetchTredndingData = async () => {
-            setLoading()
+            // setLoading()
             const response = await fetch('https://api.coingecko.com/api/v3/search/trending')
             const data = await response.json()
             
@@ -76,16 +77,41 @@ export const CoinProvider = ({children}) => {
         }, 10000);
         
         return () => clearInterval(interval);
-            // fetchGlobalData()
+        // fetchTredndingData()
+    }, [])
+
+    // Fetch Exchange
+    useEffect(() => {
+        const fetchExchanges = async () => {
+            // setLoading()
+            const response = await fetch('https://api.coingecko.com/api/v3/exchanges')
+            const data = await response.json()
+            
+            dispatch({
+                type: 'GET_EXCHANGES',
+                payload: data
+            })
+            
+        }
+        const interval = setInterval(() => {
+            fetchExchanges()
+        }, 10000);
+        
+        return () => clearInterval(interval);
+        // fetchExchanges()
     }, [])
 
     // Set loading
-    const setLoading = () => dispatch({
-        type: 'SET_LOADING'
-    })
+    // const setLoading = () => dispatch({
+    //     type: 'SET_LOADING'
+    // })
 
     return <CoinContext.Provider value={{ 
         ...state
+        // trending: state.trending,
+        // coins: state.coins,
+        // global: state.global,
+        // loading: state.loading,
      }}>
         {children}
     </CoinContext.Provider>
