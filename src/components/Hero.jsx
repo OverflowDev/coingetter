@@ -1,4 +1,4 @@
-import { useEffect, useState, useContext } from 'react'
+import { useContext } from 'react'
 import { Link } from 'react-router-dom'
 
 
@@ -15,7 +15,7 @@ function Hero() {
     if(!global) return null
 
   return (
-    <div className='flex flex-col flex-wrap justify-center md:p-12 p-8'>
+    <div className='flex flex-col flex-wrap justify-center lg:p-4 p-8'>
         <div className='mx-auto md:max-w-3xl'>
             <div className='text-center'>
                 <h1 className='font-semibold leading-snug md:text-6xl text-4xl whitespace-pre-wrap'>

@@ -10,7 +10,7 @@ function TopGainer() {
 
     const {exchanges, loading} = useContext(CoinContext)
 
-    // const exchange = exchanges?.slice(0,3)
+    const exchange = exchanges?.slice(0,3)
 
     if(!exchanges) return null
 
@@ -42,7 +42,7 @@ function TopGainer() {
 
             {/* exchanges coins  */}
 
-            {/* {loading ? 
+            {loading ? 
                 <div>
                     {
                         exchange.map((ex, i) => {
@@ -84,7 +84,7 @@ function TopGainer() {
                         })
                     }
                 </div>
-            } */}
+            }
     </div>
   )
 }

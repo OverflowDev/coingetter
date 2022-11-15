@@ -18,7 +18,7 @@ function HighPoint() {
     const toggleClass = ' transform translate-x-5';
 
   return (
-    <div className='mt-2 p-12 md:px-14 px-4'>
+    <div className='lg:p-10 p-12 md:px-14 px-4'>
         {/* <div className='mb-4'> */}
         <div className="flex items-center justify-end lg:justify-start mb-4">
             <h1 className='text-lg font-bold mr-2'>HighLight</h1>
@@ -72,9 +72,9 @@ function HighPoint() {
                     </div>
                 }
                 {/* Ads  */}
-                <div className='lg:flex md:hidden rounded lg:h-64 lg:w-11/12 dark:bg-gray-800 bg-gray-200 shadow-inner'>
+                <div className='lg:flex md:hidden rounded lg:h-64 lg:w-full dark:bg-gray-800 bg-gray-200 shadow-inner'>
                     {/* <Ads /> */}
-                    <img src={ads} alt="" className='lg:object-cover lg:h-64 lg:w-full rounded' />
+                    <img src={ads} alt="ads" className='object-cover lg:h-64 lg:w-full rounded' />
                 </div>
             </div>
         </div>

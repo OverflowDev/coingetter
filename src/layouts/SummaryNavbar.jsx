@@ -150,7 +150,7 @@ function SummaryNavbar() {
         {/* Medium screen */}
         {loading 
             ? 
-            <div className='hidden lg:flex items-center gap-2 lg:space-x-6 md:px-0 px-3'>
+            <div className='hidden lg:flex items-center xl:space-x-3 lg:space-x-3'>
                 <div className='flex items-center space-x-2'>
                     <h1>Cryptos:</h1>
                     <h2 className='h-4 w-24 rounded animate-pulse dark:bg-gray-500 bg-dark'>{''}</h2>
@@ -173,7 +173,7 @@ function SummaryNavbar() {
                 </div>
             </div>
             :
-            <div className='hidden lg:flex gap-2 md:space-x-6 md:px-0 px-3'>
+            <div className='hidden lg:flex lg:space-x-3 '>
                 <div className='flex space-x-2'>
                     <h1>Cryptos:</h1>
                     <h2 className='dark:text-green text-deepGreen font-semibold'>{global?.data?.active_cryptocurrencies }</h2>
