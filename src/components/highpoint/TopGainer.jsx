@@ -12,8 +12,7 @@ function TopGainer() {
 
     const exchange = exchanges?.slice(0,3)
 
-    if(!exchanges) return null
-
+    if(!exchange) return null
 
   return (
     <div className='p-4'>
