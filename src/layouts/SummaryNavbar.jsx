@@ -173,7 +173,7 @@ function SummaryNavbar() {
                 </div>
             </div>
             :
-            <div className='hidden lg:flex lg:space-x-3 '>
+            <div className='hidden lg:flex lg:space-x-6 text-sm'>
                 <div className='flex space-x-2'>
                     <h1>Cryptos:</h1>
                     <h2 className='dark:text-green text-deepGreen font-semibold'>{global?.data?.active_cryptocurrencies }</h2>
