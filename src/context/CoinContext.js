@@ -81,25 +81,25 @@ export const CoinProvider = ({children}) => {
     }, [])
 
     // Fetch Exchange
-    useEffect(() => {
-        const fetchExchanges = async () => {
-            // setLoading()
-            const response = await fetch('https://api.coingecko.com/api/v3/exchanges')
-            const data = await response.json()
+    // useEffect(() => {
+    //     const fetchExchanges = async () => {
+    //         // setLoading()
+    //         const response = await fetch('https://api.coingecko.com/api/v3/exchanges')
+    //         const data = await response.json()
             
-            dispatch({
-                type: 'GET_EXCHANGES',
-                payload: data
-            })
+    //         dispatch({
+    //             type: 'GET_EXCHANGES',
+    //             payload: data
+    //         })
             
-        }
-        // const interval = seInterval(() => {
-        //     fetchExchanges()
-        // }, 10000);
+    //     }
+    //     // const interval = seInterval(() => {
+    //     //     fetchExchanges()
+    //     // }, 10000);
         
-        // return () => clearInterval(interval);t
-        fetchExchanges()
-    }, [])
+    //     // return () => clearInterval(interval);t
+    //     fetchExchanges()
+    // }, [])
 
     // Set loading
     // const setLoading = () => dispatch({

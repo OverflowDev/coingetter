@@ -8,7 +8,6 @@ import CoinContext from '../../context/CoinContext'
 function Trending() {
 
     const {trending, loading} = useContext(CoinContext)
-
     // const trends = trending?.coins
     if(!trending) return null
 
