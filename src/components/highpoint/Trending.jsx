@@ -66,22 +66,22 @@ function Trending() {
                 }
             </div>
             :
-            <div className='md:p-0 p-4'>
+            <div className=''>
                 {
                     trending.coins?.slice(0,3).map((trend, i) => {
                         return (
-                            <div key={i} className='flex-col mt-2 space-y-4 '>
+                            <div key={i} className='flex-col items-center mt-2 space-y-4 '>
                                 <div className='flex items-center justify-between'>
                                     <div className='flex py-2 md:px-3 space-x-4 dark:text-white'>
                                         <h1>{i + 1}.</h1>
-                                        <img src={trend?.item.thumb} alt="ticker" />
-                                        <h1 className='tracking-wider font-semibold'>{trend?.item.symbol}</h1>
+                                        <img src={trend?.item.thumb} alt="ticker" className='md:w-8 md:h-8 w-6 h-6' />
+                                        <h1 className='tracking-wider font-semibold md:text-md text-sm'>{trend?.item.symbol}</h1>
                                     </div>
                                     <div className='flex py-2 md:px-3 whitespace dark:text-white'>
-                                        <h1 className='tracking-wider font-semibold'>{trend?.item.name}</h1>
+                                        <h1 className='tracking-wider md:text-md text-sm font-semibold'>{trend?.item.name}</h1>
                                     </div>
                                     <div className='flex py-2 md:px-3 space-x-4 dark:text-white'>
-                                        <h1 className='tracking-wider font-semibold dark:text-lightGreen text-green'>{trend?.item.price_btc.toFixed(4)} btc</h1>
+                                        <h1 className='tracking-wider font-semibold md:text-md text-sm dark:text-lightGreen text-green'>{trend?.item.price_btc.toFixed(4)} btc</h1>
                                     </div>
                                     {/* <div className='flex space-x-1 py-2 px-3'>
                                         <img src={AGreen} alt="arrow" />

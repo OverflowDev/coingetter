@@ -89,7 +89,7 @@ function TopGainer() {
                     }
                 </div>
                 :
-                <div className='md:p-0 p-2'>
+                <div className=''>
                     {
                         exchange.map((ex, i) => {
                             return (
@@ -97,11 +97,11 @@ function TopGainer() {
                                     <div className='flex items-center justify-between'>
                                         <div className='flex items-center py-2 px-3 space-x-4 dark:text-white'>
                                             <h1>{i + 1}.</h1>
-                                            <img src={ex?.image} alt="ticker" className='w-8 h-8 rounded-full' />
-                                            <a href={ex?.url} target="_blank" className='tracking-wider font-semibold hover:text-green' rel='noreferrer'>{ex?.name}</a>
+                                            <img src={ex?.image} alt="ticker" className='md:w-8 md:h-8 w-6 h-6 rounded-full' />
+                                            <a href={ex?.url} target="_blank" className='tracking-wider font-semibold md:text-md text-sm hover:text-green' rel='noreferrer'>{ex?.name}</a>
                                         </div>
                                         <div className='flex py-2 px-3 space-x-4 dark:text-white text-dark'>
-                                            <h1 className='tracking-wider font-semibold'>{ex?.year_established}</h1>
+                                            <h1 className='tracking-wider font-semibold md:text-md text-sm'>{ex?.year_established}</h1>
                                         </div>
                                     </div>
                                 </div>
