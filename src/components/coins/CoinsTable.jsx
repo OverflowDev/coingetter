@@ -1,10 +1,10 @@
 import { useContext, useState } from 'react'
 import CoinContext from '../../context/CoinContext'
 
-import Up from '../../assets/svg/up.svg'
-import Down from '../../assets/svg/down.svg'
-import Bitcoin from '../../assets/svg/bitcoin.svg'
-import Ticker from '../../assets/svg/ticker.svg'
+// import Up from '../../assets/svg/up.svg'
+// import Down from '../../assets/svg/down.svg'
+// import Bitcoin from '../../assets/svg/bitcoin.svg'
+// import Ticker from '../../assets/svg/ticker.svg'
 import Pagination from './Pagination'
 import Spinner from '../../layouts/Spinner'
 

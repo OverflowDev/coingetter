@@ -112,7 +112,7 @@ function Navbar() {
 
                 {/* Mobile Menu  */}
                 <ul className={`
-                   dark:text-white text-dark lg:hidden dark:bg-dark bg-white absolute bottom-0 w-full h-screen border-2 py-24 px-12
+                   dark:text-white text-dark lg:hidden dark:bg-dark bg-white absolute bottom-0 w-full h-screen py-24 px-12
                     delay-100 duration-500 z-10 ${open ? 'left-0' : 'left-[-100%]'}
                 `}>
                 
