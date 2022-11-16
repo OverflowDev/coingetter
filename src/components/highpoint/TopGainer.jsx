@@ -89,7 +89,7 @@ function TopGainer() {
                     }
                 </div>
                 :
-                <div>
+                <div className='md:p-0 p-2'>
                     {
                         exchange.map((ex, i) => {
                             return (

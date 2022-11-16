@@ -122,12 +122,12 @@ function CoinsTable() {
                                                         </td>
                                                         <td className=' text-sm font-light px-6 py-4 whitespace-nowrap'>
                                                             <div className='flex items-center space-x-3'>
-                                                                <div className='h-12 w-12 rounded-full bg-transparent border dark:border-gray-500 border-gray-800 flex items-center justify-center'>
-                                                                    <img src={coin.image} alt="bitcoin" className='h-8 w-8' />
+                                                                <div className='md:h-12 md:w-12 h-8 w-8 rounded-full bg-transparent border dark:border-gray-500 border-gray-800 flex items-center justify-center'>
+                                                                    <img src={coin.image} alt="bitcoin" className='md:h-8 md:w-8 h-6 w-6' />
                                                                 </div>
                                                                 <div className='flex-col dark:text-gray-400 text-gray-800'>
-                                                                    <h1 className='uppercase font-semibold'>{coin.symbol}</h1>
-                                                                    <h1 className=' tracking-wide font-light'>{coin.name}</h1>
+                                                                    <h1 className='uppercase font-semibold md:text-md text-sm'>{coin.symbol}</h1>
+                                                                    <h1 className=' tracking-wide font-light md:text-md text-sm'>{coin.name}</h1>
                                                                 </div>
                                                             </div>
                                                         </td>

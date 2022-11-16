@@ -19,15 +19,16 @@ function Navbar() {
     //     Hello
     // </div>
     <div className='overflow-hidden'>
-        <nav className="bg-inherit py-1">
+        <nav className="bg-inherit py-2">
             <div className="md:px-14 px-4 flex items-center justify-between text-sm ">
                 
                 {/*  Menu  */}
-                <div className='z-50 lg:w-auto w-full flex items-center justify-between'>
-                    <div className='text-3xl lg:hidden rounded-md w-8 h-8' onClick={() => setOpen(!open)}>
-                        <ion-icon name={`${open ? 'close' : 'menu'}`}></ion-icon>
+                <div className='z-50 lg:w-auto w-full flex items-center justify-between '>
+                    {/* DarkMode  */}
+                    <div className='relative hidden'>
+                        <Darkmode />
                     </div>
-                    {open ? 
+                    {/* {open ? 
                         <Link onClick={closeMenu}>
                             <img src={Logo} alt="Logo" className='lg:cursor-pointer h-12 ' />
                         </Link>
@@ -38,10 +39,31 @@ function Navbar() {
                                 <h2 className='tracking-wider text-3xl'>CoinGetter</h2>
                             </div>
                         </Link>
-                    }
-                    {/* Cart  */}
-                    <div className='relative lg:hidden'>
-                        <Darkmode />
+                    } */}
+                    <Link onClick={closeMenu}>
+                        <div className='flex items-center'>
+                            <img src={Logo} alt="Logo" className='lg:cursor-pointer h-12' />
+                            <h2 className='tracking-wider text-2xl'>CoinGetter</h2>
+                        </div>
+                    </Link>
+                    <div className='flex items-center space-x-2 lg:hidden'>
+                        <button type="submit" className="">
+                            <img src={Search} alt="search" />
+                        </button>
+
+                        {/* <form action="" class="relative">
+                        <input type="search" 
+                                class="peer cursor-pointer relative z-10 h-8 w-8 rounded-full border bg-transparent pl-12 outline-none focus:w-full focus:cursor-text focus:border-lime-300 focus:pl-16 focus:pr-4" />
+                        <img 
+                            src={Search} 
+                            alt="search"
+                            class="absolute inset-y-0 my-auto h-8 w-12 border-r border-transparent stroke-gray-500 px-3.5 peer-focus:border-lime-300 peer-focus:stroke-lime-500" 
+                        />
+                        </form> */}
+
+                        <div className='text-3xl  rounded-md w-8 h-8' onClick={() => setOpen(!open)}>
+                            <ion-icon name={`${open ? 'close' : 'menu'}`}></ion-icon>
+                        </div>
                     </div>
                 </div>
 
@@ -51,9 +73,6 @@ function Navbar() {
                         <div className="pt-2 flex items-center relative mx-auto dark:text-gray-500 text-tableDark">
                             <input className="dark:bg-search bg-green dark:bg-opacity-20 bg-opacity-40 h-10 px-5 pr-16 text-sm focus:outline-none" placeholder="Search coin name ..." />
                             <button type="submit" className="absolute right-0 top-0 mt-5 mr-4">
-                                {/* <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4 text-gray-500">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
-                                </svg> */}
                                 <img src={Search} alt="search" />
                             </button>
                         </div>
@@ -93,11 +112,11 @@ function Navbar() {
 
                 {/* Mobile Menu  */}
                 <ul className={`
-                   dark:text-white text-dark lg:hidden dark:bg-dark bg-white absolute w-full h-screen bottom-0 py-24 px-12
+                   dark:text-white text-dark lg:hidden dark:bg-dark bg-white absolute bottom-0 w-full h-screen border-2 py-24 px-12
                     delay-100 duration-500 z-10 ${open ? 'left-0' : 'left-[-100%]'}
                 `}>
                 
-                    <li>
+                    {/* <li>
                         <div className="pt-2 flex items-center relative mx-auto dark:text-gray-300 text-tableDark">
                             <input className="w-full dark:bg-gray-300 bg-green dark:bg-opacity-20 bg-opacity-40 h-10 px-3 text-sm focus:outline-none" placeholder="Search coin name ..." />
                             <button type="submit" className="absolute right-0 top-0 mt-5 mr-4">
@@ -105,7 +124,7 @@ function Navbar() {
                             </button>
                         </div>
                         
-                    </li>
+                    </li> */}
                     <li className='py-3 text-center px-3 text-2xl' onClick={closeMenu}>
                         Cryptocurrencies
                     </li>
@@ -123,6 +142,11 @@ function Navbar() {
                     </li>
                     <li className='py-3 text-center px-3 text-2xl' onClick={closeMenu}>
                         Portfolio
+                    </li>
+                    <li className='py-3 text-center px-3 text-2xl' onClick={closeMenu}>
+                        <div className=''>
+                            <Darkmode />
+                        </div>
                     </li>
                     {/* <li>
                         <button className='bg-lime-300 py-1 px-4 rounded-full text-gray-700 uppercase' onClick={closeMenu}>

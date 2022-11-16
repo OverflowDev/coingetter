@@ -66,11 +66,11 @@ function Trending() {
                 }
             </div>
             :
-            <div>
+            <div className='md:p-0 p-4'>
                 {
                     trending.coins?.slice(0,3).map((trend, i) => {
                         return (
-                            <div key={i} className='flex-col mt-6 space-y-4'>
+                            <div key={i} className='flex-col mt-2 space-y-4 '>
                                 <div className='flex items-center justify-between'>
                                     <div className='flex py-2 md:px-3 space-x-4 dark:text-white'>
                                         <h1>{i + 1}.</h1>
