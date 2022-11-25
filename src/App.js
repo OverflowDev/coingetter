@@ -1,25 +1,28 @@
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 
-import {Navbar, SummaryNavbar, Hero, HighPoint, Coins, Subscription, Footer, FooterOne} from './components'
+// import {Navbar, SummaryNavbar, Hero, HighPoint, Coins, Coin, Subscription, Footer, FooterOne} from './components'
+import {Home, Navbar, SummaryNavbar, Coin, Footer, FooterOne} from './components'
 
 import { CoinProvider } from './context/CoinContext';
 
 function App() {
   return (
       <CoinProvider>
-        <div className="font-barlow dark:bg-dark dark:text-white bg-white text-dark ">
+        <div className=" ">
           <Router>
             <Navbar />
             <SummaryNavbar />
-            <Hero />
+            <Routes>
+              <Route exact path='/' element={<Home/>}  />
+              <Route exact path='/coin/:id' element={<Coin/>}  />
+            </Routes>
+            {/* <FooterOne /> */}
+            <Footer />
+            {/* <Hero />
             <HighPoint />
             <Coins />
             <Subscription />
-            <FooterOne />
-            <Footer />
-            {/* <Routes> */}
-              {/* <Route exact path='/' element={<Navbar/>}  /> */}
-            {/* </Routes> */}
+            <Footer /> */}
           </Router>
         </div>
       </CoinProvider>

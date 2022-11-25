@@ -40,7 +40,7 @@ function Navbar() {
                             </div>
                         </Link>
                     } */}
-                    <Link onClick={closeMenu}>
+                    <Link to='/' onClick={closeMenu}>
                         <div className='flex items-center'>
                             <img src={Logo} alt="Logo" className='lg:cursor-pointer h-12' />
                             <h2 className='tracking-wider text-2xl'>CoinGetter</h2>

@@ -8,6 +8,7 @@ export const CoinProvider = ({children}) => {
 
     const initialState = {
         coins: [],
+        coin: [],
         global: {},
         trending: {},
         exchanges: {},
@@ -20,7 +21,7 @@ export const CoinProvider = ({children}) => {
     // Fetch All coins or limit it 
     useEffect(() => {     
         const fetchCoins = async () => {
-            // setLoading()
+            setLoading()
             const response = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=1&sparkline=false')
             const data = await response.json()
 
@@ -41,7 +42,7 @@ export const CoinProvider = ({children}) => {
     // Fetch Crypto Global Data 
     useEffect(() => {
         const fetchGlobalData = async () => {
-            // setLoading()
+            setLoading()
             const response = await fetch('https://api.coingecko.com/api/v3/global')
             const data = await response.json()
             
@@ -61,8 +62,8 @@ export const CoinProvider = ({children}) => {
 
     // Fetch Trending 
     useEffect(() => {
-        const fetchTredndingData = async () => {
-            // setLoading()
+        const fetchTrendingData = async () => {
+            setLoading()
             const response = await fetch('https://api.coingecko.com/api/v3/search/trending')
             const data = await response.json()
             
@@ -77,8 +78,21 @@ export const CoinProvider = ({children}) => {
         // }, 10000);
         
         // return () => clearInterval(interval);
-        fetchTredndingData()
+        fetchTrendingData()
     }, [])
+
+    // Fetch Coin
+        const fetchCoin = async (coin) => {
+            setLoading()
+            const response = await fetch(`https://api.coingecko.com/api/v3/coins/${coin}?community_data=true&developer_data=true`)
+            const data = await response.json()
+            
+            dispatch({
+                type: 'GET_COIN',
+                payload: data
+            })
+            
+        }
 
     // Fetch Exchange
     // useEffect(() => {
@@ -102,12 +116,13 @@ export const CoinProvider = ({children}) => {
     // }, [])
 
     // Set loading
-    // const setLoading = () => dispatch({
-    //     type: 'SET_LOADING'
-    // })
+    const setLoading = () => dispatch({
+        type: 'SET_LOADING'
+    })
 
     return <CoinContext.Provider value={{ 
-        ...state
+        ...state,
+        fetchCoin,
         // trending: state.trending,
         // coins: state.coins,
         // global: state.global,

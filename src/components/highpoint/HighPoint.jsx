@@ -38,11 +38,11 @@ function HighPoint() {
         <div className={` ${isActive ? 'hidden transition ease-out duration-500 delay-300' : 'flex justify-center transition ease-in duration-500 delay-300'}`}>
             <div className='lg:flex grid grid-cols-1 lg:space-y-0 space-y-3 lg:space-x-5 w-full'>
                 {/* Trending  */}
-                {loading ?
+                {/* {loading ?
                     <div className='rounded shadow-inner lg:p-[0.8px] lg:h-64 lg:w-11/12'>
                         <div className='animate-pulse h-full w-full dark:bg-gray-700 bg-gray-700 rounded shadow-inner'></div>
                     </div>
-                    :
+                    : */}
                     <div className=' rounded shadow-inner
                         dark:bg-gradient-to-br dark:from-red-500 dark:via-gray-800 
                         bg-gradient-to-br from-red-500 via-gray-800 
@@ -53,13 +53,13 @@ function HighPoint() {
                             <Trending />
                         </div>
                     </div>
-                }
+                {/* } */}
                 {/* Exchanges  */}
-                {loading ?
+                {/* {loading ?
                     <div className='rounded shadow-inner lg:p-[0.8px] lg:h-64 lg:w-11/12'>
                         <div className='animate-pulse h-full w-full dark:bg-gray-700 bg-gray-700 rounded shadow-inner'></div>
                     </div>
-                    :
+                    : */}
                     <div className='rounded shadow-inner
                         dark:bg-gradient-to-br dark:from-green dark:via-transparent dark:to-transparent 
                         bg-gradient-to-br from-green via-transparent to-transparent 
@@ -70,7 +70,7 @@ function HighPoint() {
                             <TopGainer />
                         </div>
                     </div>
-                }
+                {/* } */}
                 {/* Ads  */}
                 <div className='lg:flex md:hidden rounded lg:h-64 lg:w-full dark:bg-gray-800 bg-gray-200 shadow-inner'>
                     {/* <Ads /> */}

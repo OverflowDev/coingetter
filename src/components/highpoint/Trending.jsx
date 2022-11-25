@@ -42,7 +42,7 @@ function Trending() {
         </div>
         {/* Trending coins  */}
         {loading ? 
-            <div>
+            <div className=''>
                 {
                     trending.coins?.slice(0,3).map((trend, i) => {
                         return (
@@ -72,7 +72,7 @@ function Trending() {
                         return (
                             <div key={i} className='flex-col items-center mt-2 space-y-4 '>
                                 <div className='flex items-center justify-between'>
-                                    <div className='flex py-2 md:px-3 space-x-4 dark:text-white'>
+                                    <div className='flex items-center py-2 md:px-3 space-x-4 dark:text-white'>
                                         <h1>{i + 1}.</h1>
                                         <img src={trend?.item.thumb} alt="ticker" className='md:w-8 md:h-8 w-6 h-6' />
                                         <h1 className='tracking-wider font-semibold md:text-md text-sm'>{trend?.item.symbol}</h1>

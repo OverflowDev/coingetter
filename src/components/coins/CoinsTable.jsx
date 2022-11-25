@@ -1,6 +1,8 @@
 import { useContext, useState } from 'react'
 import CoinContext from '../../context/CoinContext'
 
+import { Link } from 'react-router-dom'
+
 // import Up from '../../assets/svg/up.svg'
 // import Down from '../../assets/svg/down.svg'
 // import Bitcoin from '../../assets/svg/bitcoin.svg'
@@ -170,9 +172,11 @@ function CoinsTable() {
                                                             </h1>
                                                         </td>
                                                         <td className='text-center text-sm font-light px-6 py-4 whitespace-nowrap'>
-                                                            <button className='dark:bg-gray-600 bg-gray-400 h-8 w-8 rounded-full'>
-                                                                <ion-icon name="ellipsis-vertical-outline"></ion-icon>
-                                                            </button>
+                                                            <Link to={`/coin/${coin.id}`}>
+                                                                <button className='dark:bg-gray-600 bg-gray-400 h-8 w-8 rounded-full'>
+                                                                    <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
+                                                                </button>
+                                                            </Link>
                                                         </td>
                                                     </tr>
                                                 )
