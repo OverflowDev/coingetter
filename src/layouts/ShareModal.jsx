@@ -71,7 +71,7 @@ function ShareModal({visible, onClose}) {
                         {/* Facebook  */}
                         <FacebookShareButton 
                             url={shareUrl}
-                            quote={'CoinGetter Crypto Platform'}
+                            quote={'CoinGetter Crypto Platform by OVERFLOW'}
                             hashtag={'#coinGetter'}
                             >
                             <div
@@ -93,8 +93,8 @@ function ShareModal({visible, onClose}) {
                         {/* Whatsapp */}
                         <WhatsappShareButton
                             url={shareUrl}
-                            quote={'CoinGetter Crypto Platform'}
-                            hashtag={'#coinGetter'}
+                            quote={'CoinGetter Crypto Platform by OVERFLOW'}
+                            hashtags={'#coinGetter'}
                         >
                             <div
                                 className="border hover:bg-whatsapp w-12 h-12 fill-whatsapp border-whatsapp hover:fill-white rounded-full flex items-center justify-center shadow-xl hover:shadow-lime-500/50 cursor-pointer"
@@ -117,8 +117,8 @@ function ShareModal({visible, onClose}) {
                         {/* Ttwitter */}
                         <TwitterShareButton
                             url={shareUrl}
-                            quote={'CoinGetter Crypto Platform'}
-                            hashtag={'#coinGetter'}
+                            title={'CoinGetter Crypto Platform by OVERFLOW'}
+                            hashtags={['coinGetter', 'crypto']}
                         >
                             <div
                                 className="border hover:bg-twitter w-12 h-12 fill-twitter hover:fill-white border-twitter rounded-full flex items-center justify-center shadow-xl hover:shadow-sky-500/50 cursor-pointer"
