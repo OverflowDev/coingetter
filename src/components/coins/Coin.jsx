@@ -8,6 +8,7 @@ import CoinContext from '../../context/CoinContext'
 import gif from '../../assets/png/spinner.gif'
 import ShareModal from '../../layouts/ShareModal'
 import CoinDescription from './CoinDescription'
+import Breadcrumbs from '../../layouts/Breadcrumbs'
 
 function Coin() {
 
@@ -51,19 +52,21 @@ function Coin() {
     });
     
     const sourceCode = coin?.links?.repos_url?.github
+
     const Categories = coin?.categories
 
 
     if(!coin) return null
 
     return (
-    <div className='overflow-hidden mt-12 h-full '>
+    <div className='overflow-hidden h-full '>
+        <Breadcrumbs coin={coin} />
         {loading ? 
             <div className='flex items-center justify-center h-screen'>
                 <img src={gif} alt="gif" className='h-12 w-12' />
             </div>
             :
-            <div className='md:px-12 px-4'>
+            <div className='md:px-12 px-4 mt-8'>
                 <div className='grid md:grid-cols-3'>
                     {/* Col 1  */}
                     <div className="col-span-2 ">
@@ -212,7 +215,7 @@ function Coin() {
                                 <div className='flex items-center space-x-6'>
                                     <h2 className='text-sm whitespace-nowrap'>Source Code</h2>
                                     <div className='flex flex-wrap items-center gap-2'>
-                                        {sourceCode.map((source, i) => {
+                                        {sourceCode?.map((source, i) => {
                                             return (
                                                 <div key={i}>
                                                     <a 
@@ -232,7 +235,7 @@ function Coin() {
                                     <div className='flex items-center space-x-6'>
                                         <h2 className='text-sm'>Tags</h2>
                                         <div className='flex flex-wrap items-center gap-2'>
-                                            {Categories.map((category, i) => {
+                                            {Categories?.map((category, i) => {
                                                 return (
                                                     <div key={i}>
                                                         <span className="text-xs inline-block py-2 px-2.5 leading-none text-center whitespace-nowrap align-baseline tracking-wider font-bold dark:bg-summary dark:bg-opacity-50 bg-dark bg-opacity-10 dark:text-white text-gray-900 rounded">{category}</span>
