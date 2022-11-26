@@ -39,6 +39,9 @@ module.exports = {
         'lightGreen': '#10DC78',
         'redDown': '#F15950',
         'tableDark': '#09080B',
+        'whatsapp': '#25D366',
+        'facebook': '#1877f2',
+        'twitter': '#1d9bf0',
       },
 
       fontFamily: {

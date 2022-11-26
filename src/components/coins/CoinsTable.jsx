@@ -64,8 +64,8 @@ function CoinsTable() {
                                         {
                                             currentCoins.map((coin, i) => {
                                                 return (
-                                                    <tr key={i} className='dark:bg-summary bg-tableDark dark:bg-opacity-10 bg-opacity-20 h-16'>
-                                                        <td className=' px-6 py-4 whitespace-nowrap'>
+                                                    <tr key={i} className='dark:bg-summary bg-tableDark dark:bg-opacity-10 bg-opacity-20  h-16'>
+                                                        <td className=' px-6 py-4 whitespace-nowrap '>
                                                             <div className='flex items-center ml-2 space-x-1'>
                                                                 <div className='h-6 w-8 rounded animate-pulse dark:bg-gray-500 bg-dark'></div>
                                                             </div>
@@ -111,12 +111,12 @@ function CoinsTable() {
                                         }
                                     </tbody>
                                     :
-                                    <tbody clas>
+                                    <tbody className=''>
                                         {
                                             currentCoins.map((coin, i) => {
                                                 return (
                                                     <tr key={i} className='dark:bg-summary bg-tableDark dark:bg-opacity-10 bg-opacity-10 shadow-inner h-16'>
-                                                        <td className='dark:text-white text-sm font-light px-6 py-4 whitespace-nowrap'>
+                                                        <td className='dark:text-white text-sm font-light px-6 py-4 whitespace-nowrap '>
                                                             <div className='flex items-center ml-2 space-x-1'>
                                                                 <ion-icon name="star-outline"></ion-icon>
                                                                 <h1 className='text-md font-semibold'>{coin.market_cap_rank}</h1>

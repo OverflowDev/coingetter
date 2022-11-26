@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 
 import Moment from 'moment'
@@ -6,16 +6,31 @@ import Moment from 'moment'
 import CoinContext from '../../context/CoinContext'
 
 import gif from '../../assets/png/spinner.gif'
+import ShareModal from '../../layouts/ShareModal'
+import CoinDescription from './CoinDescription'
 
 function Coin() {
 
     const {fetchCoin, coin, loading} = useContext(CoinContext)
+
+    const [showModal, setShowModal] = useState(false)
+    const handleOnClose = () => setShowModal(false)
+
+    const [activeNoti, setActiveNoti] = useState(false)
+    const handleActiveNoti = () => setActiveNoti(!activeNoti)
+
+    const [activeStar, setActiveStar] = useState(false)
+    const handleActiveStar = () => setActiveStar(!activeStar)
     
+
     const params = useParams()
+
+    // Date 
     Moment.locale('en');
     
     useEffect(() => {
         fetchCoin(params.id)
+        window.scrollTo(0, 0);
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
     
@@ -42,16 +57,16 @@ function Coin() {
     if(!coin) return null
 
     return (
-    <div className='overflow-hidden md:px-14 px-4 mt-12 h-full container'>
+    <div className='overflow-hidden mt-12 h-full '>
         {loading ? 
             <div className='flex items-center justify-center h-screen'>
                 <img src={gif} alt="gif" className='h-12 w-12' />
             </div>
             :
-            <div>
+            <div className='md:px-12 px-4'>
                 <div className='grid md:grid-cols-3'>
                     {/* Col 1  */}
-                    <div className="col-span-2">
+                    <div className="col-span-2 ">
                         <div className="flex-col">
                             <span className="text-xs inline-block py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-semibold dark:bg-summary dark:bg-opacity-25 bg-dark text-white rounded">Rank #{coin.market_cap_rank}</span>
                             <div className='mt-4 flex items-center space-x-2 '>
@@ -74,14 +89,39 @@ function Coin() {
                             </div>
                             {/* Buttons  */}
                             <div className='mt-4 flex items-center space-x-3 '>
-                                <button className='px-4 py-1 outline outline-2 rounded dark:hover:bg-gray-700 hover:bg-gray-300'>
+                                <button 
+                                    className='px-4 py-1 outline outline-2 rounded dark:hover:bg-gray-700 hover:bg-gray-300'
+                                    onClick={() => setShowModal(true)}
+                                >
                                     <ion-icon name="arrow-redo-outline"></ion-icon>
                                 </button>
-                                <button className='px-4 py-1 outline outline-2 rounded dark:hover:bg-gray-700 hover:bg-gray-300'>
-                                    <ion-icon name="notifications-outline"></ion-icon>
+                                <button 
+                                    className='px-4 py-1 outline outline-2 rounded dark:hover:bg-gray-700 hover:bg-gray-300'
+                                    onClick={handleActiveNoti}
+                                >
+                                    {activeNoti ? 
+                                        <h2 className='text-red-800'>
+                                            <ion-icon name="notifications"></ion-icon>
+                                        </h2>
+                                        :
+                                        <h2 className=''>
+                                            <ion-icon name="notifications-outline"></ion-icon>
+                                        </h2>
+                                    }
                                 </button>
-                                <button className='px-4 py-1 outline outline-2 rounded dark:hover:bg-gray-700 hover:bg-gray-300'>
-                                    <ion-icon name="star-outline"></ion-icon>
+                                <button 
+                                    className='px-4 py-1 outline outline-2 rounded dark:hover:bg-gray-700 hover:bg-gray-300'
+                                    onClick={handleActiveStar}
+                                >
+                                    {activeStar ? 
+                                        <h2 className='text-yellow-500'>
+                                            <ion-icon name="star"></ion-icon>
+                                        </h2>
+                                        :
+                                        <h2 className=''>
+                                            <ion-icon name="star-outline"></ion-icon>
+                                        </h2>
+                                    }
                                 </button>
                             </div>
                             {/* Buttons ends  */}
@@ -209,53 +249,55 @@ function Coin() {
                     {/* Col 1 Ends  */}
 
                     {/* Col 2  */}
-                    <div className=' text-md md:w-5/6 w-96 px-8 py-4 dark:bg-gray-700 bg-gray-300 bg-opacity-30 rounded hover:shadow-xl shadow-md md:mt-0 mt-12'>
+                    <div className=''>
+                        <div className=' text-md md:w-5/6 w-96 px-8 py-4 dark:bg-gray-700 bg-gray-300 bg-opacity-30 rounded hover:shadow-xl shadow-md md:mt-0 mt-12'>
 
-                        <h2 className='text-center text-2xl font-semibold mb-6'>{coin.name} Price Statistics</h2>
+                            <h2 className='text-center text-2xl font-semibold mb-6'>{coin.name} Price Statistics</h2>
 
-                        <div className='grid gap-4 mt-2'>
-                            <div className='grid grid-cols-2 border-b border-gray-500'>
-                                <h2 className='font-semibold tracking-wide text-sm'>Bitcoin Price</h2>
-                                <h2 className=' text-end'>{coin?.market_data?.current_price.usd.toLocaleString("en-US", {style:"currency", currency:"USD"})}</h2>
-                            </div>
-                            <div className='grid grid-cols-2 border-b border-gray-500'>
-                                <h2 className='font-semibold tracking-wide text-sm'>24h Low / 24h High</h2>
-                                <div className="flex justify-end space-x-1">
-                                    <h2 className=''>{coin?.market_data?.low_24h.usd.toLocaleString("en-US", {style:"currency", currency:"USD"})}</h2> 
-                                    <span>/</span> 
-                                    <h2 className=''>{coin?.market_data?.high_24h.usd.toLocaleString("en-US", {style:"currency", currency:"USD"})}</h2> 
+                            <div className='grid gap-4 mt-2'>
+                                <div className='grid grid-cols-2 border-b border-gray-500'>
+                                    <h2 className='font-semibold tracking-wide text-sm'>Bitcoin Price</h2>
+                                    <h2 className=' text-end'>{coin?.market_data?.current_price.usd.toLocaleString("en-US", {style:"currency", currency:"USD"})}</h2>
                                 </div>
-                            </div>
-                            {/* <div className='grid grid-cols-2 border-b border-gray-500'>
-                                <h2 className='font-semibold tracking-wide text-sm'>7d Low / 7d High</h2>
-                                <h2 className=' text-end'>$16,851</h2>
-                            </div> */}
-                            <div className='grid grid-cols-2 border-b border-gray-500'>
-                                <h2 className='font-semibold tracking-wide text-sm'>Trading Volume</h2>
-                                <h2 className=' text-end'>{coin?.market_data?.total_volume?.usd.toLocaleString("en-US", {style:"currency", currency:"USD"})}</h2>
-                            </div>
-                            <div className='grid grid-cols-2 border-b border-gray-500'>
-                                <h2 className='font-semibold tracking-wide text-sm'>Market Cap Rank</h2>
-                                <h2 className=' text-end'>{coin?.market_data?.market_cap_rank}</h2>
-                            </div>
-                            <div className='grid grid-cols-2 border-b border-gray-500'>
-                                <h2 className='font-semibold tracking-wide text-sm'>Market Cap</h2>
-                                <h2 className=' text-end'>{coin?.market_data?.market_cap?.usd.toLocaleString("en-US", {style:"currency", currency:"USD"})}</h2>
-                            </div>
-                            <div className='grid grid-cols-2 border-b border-gray-500'>
-                                <h2 className='font-semibold tracking-wide text-sm'>All Time High</h2>
-                                <div className='flex flex-wrap items-center justify-end space-x-2'>
-                                    <h2 className=''>{coin?.market_data?.ath?.usd.toLocaleString("en-US", {style:"currency", currency:"USD"})}</h2>
-                                    <h2 className='text-red-500'>{coin?.market_data?.ath_change_percentage?.usd.toFixed(2)}%</h2>
-                                    <h2 className='text-sm'>{Moment(coin?.market_data?.ath_date?.usd).format('d MMM, YYYY')}</h2>
+                                <div className='grid grid-cols-2 border-b border-gray-500'>
+                                    <h2 className='font-semibold tracking-wide text-sm'>24h Low / 24h High</h2>
+                                    <div className="flex justify-end space-x-1">
+                                        <h2 className=''>{coin?.market_data?.low_24h.usd.toLocaleString("en-US", {style:"currency", currency:"USD"})}</h2> 
+                                        <span>/</span> 
+                                        <h2 className=''>{coin?.market_data?.high_24h.usd.toLocaleString("en-US", {style:"currency", currency:"USD"})}</h2> 
+                                    </div>
                                 </div>
-                            </div>
-                            <div className='grid grid-cols-2 border-b border-gray-500'>
-                                <h2 className='font-semibold tracking-wide text-sm'>All Time Low</h2>
-                                <div className='flex flex-wrap items-center justify-end space-x-2'>
-                                    <h2 className=' text-end'>{coin?.market_data?.atl?.usd.toLocaleString("en-US", {style:"currency", currency:"USD"})}</h2>
-                                    <h2 className='text-lime-500'>{coin?.market_data?.atl_change_percentage?.usd.toFixed(2)}%</h2>
-                                    <h2 className='text-sm'>{Moment(coin?.market_data?.atl_date?.usd).format('d MMM, YYYY')}</h2>
+                                {/* <div className='grid grid-cols-2 border-b border-gray-500'>
+                                    <h2 className='font-semibold tracking-wide text-sm'>7d Low / 7d High</h2>
+                                    <h2 className=' text-end'>$16,851</h2>
+                                </div> */}
+                                <div className='grid grid-cols-2 border-b border-gray-500'>
+                                    <h2 className='font-semibold tracking-wide text-sm'>Trading Volume</h2>
+                                    <h2 className=' text-end'>{coin?.market_data?.total_volume?.usd.toLocaleString("en-US", {style:"currency", currency:"USD"})}</h2>
+                                </div>
+                                <div className='grid grid-cols-2 border-b border-gray-500'>
+                                    <h2 className='font-semibold tracking-wide text-sm'>Market Cap Rank</h2>
+                                    <h2 className=' text-end'>{coin?.market_data?.market_cap_rank}</h2>
+                                </div>
+                                <div className='grid grid-cols-2 border-b border-gray-500'>
+                                    <h2 className='font-semibold tracking-wide text-sm'>Market Cap</h2>
+                                    <h2 className=' text-end'>{coin?.market_data?.market_cap?.usd.toLocaleString("en-US", {style:"currency", currency:"USD"})}</h2>
+                                </div>
+                                <div className='grid grid-cols-2 border-b border-gray-500'>
+                                    <h2 className='font-semibold tracking-wide text-sm'>All Time High</h2>
+                                    <div className='flex flex-wrap items-center justify-end space-x-2'>
+                                        <h2 className=''>{coin?.market_data?.ath?.usd.toLocaleString("en-US", {style:"currency", currency:"USD"})}</h2>
+                                        <h2 className='text-red-500'>{coin?.market_data?.ath_change_percentage?.usd.toFixed(2)}%</h2>
+                                        <h2 className='text-sm'>{Moment(coin?.market_data?.ath_date?.usd).format('d MMM, YYYY')}</h2>
+                                    </div>
+                                </div>
+                                <div className='grid grid-cols-2 border-b border-gray-500'>
+                                    <h2 className='font-semibold tracking-wide text-sm'>All Time Low</h2>
+                                    <div className='flex flex-wrap items-center justify-end space-x-2'>
+                                        <h2 className=' text-end'>{coin?.market_data?.atl?.usd.toLocaleString("en-US", {style:"currency", currency:"USD"})}</h2>
+                                        <h2 className='text-lime-500'>{coin?.market_data?.atl_change_percentage?.usd.toFixed(2)}%</h2>
+                                        <h2 className='text-sm'>{Moment(coin?.market_data?.atl_date?.usd).format('d MMM, YYYY')}</h2>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -264,14 +306,11 @@ function Coin() {
                 </div>
 
                 {/* What is  */}
-                <div className='mt-12 mx-auto md:w-full md:max-w-2xl'>
-                    <h2 className='text-center md:text-5xl text-3xl uppercase tracking-wider border-b'>What is {coin.name}</h2>
-                    <p className='leading-2 text-center mt-2'>
-                        {coin?.description?.en}
-                    </p>
-                </div>
+                <CoinDescription coin={coin} />
             </div>
         }
+        {/* Modal  */}
+        <ShareModal onClose={handleOnClose} visible={showModal} />
     </div>
   )
 }
