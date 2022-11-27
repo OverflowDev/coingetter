@@ -1,4 +1,5 @@
 import { useContext } from 'react'
+import { Link } from 'react-router-dom'
 import CoinContext from '../../context/CoinContext'
 
 // import AGreen from '../../assets/svg/arrowgreen.svg'
@@ -70,8 +71,8 @@ function Trending() {
                 {
                     trending.coins?.slice(0,3).map((trend, i) => {
                         return (
-                            <div key={i} className='flex-col items-center mt-2 space-y-4 '>
-                                <div className='flex items-center justify-between'>
+                            <div key={i} className='flex-col items-center mt-2 space-y-4'>
+                                <Link to={`/coin/${trend?.item?.id}`} className='flex items-center justify-between dark:hover:bg-dark hover:bg-gray-300 bg-opacity-30 rounded-lg'>
                                     <div className='flex items-center py-2 md:px-3 space-x-4 dark:text-white'>
                                         <h1>{i + 1}.</h1>
                                         <img src={trend?.item.thumb} alt="ticker" className='md:w-8 md:h-8 w-6 h-6' />
@@ -87,7 +88,7 @@ function Trending() {
                                         <img src={AGreen} alt="arrow" />
                                         <h1 className='tracking-wider font-semibold text-lightGreen'>72%</h1>
                                     </div> */}
-                                </div>
+                                </Link>
                             </div>
                         )
                     })

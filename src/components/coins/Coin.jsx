@@ -132,11 +132,11 @@ function Coin() {
                             <div className='mt-8 grid md:grid-cols-2 gap-6'>
                                 <div className='flex items-center space-x-6'>
                                     <h2 className='text-sm'>Total Supply</h2>
-                                    <span className="text-xs inline-block py-2 px-2.5 leading-none text-center whitespace-nowrap align-baseline tracking-wider font-bold dark:bg-summary dark:bg-opacity-20 bg-dark bg-opacity-10 dark:text-white text-gray-900 rounded">{coin?.market_data?.total_supply.toLocaleString()}</span>
+                                    <span className="text-xs inline-block py-2 px-2.5 leading-none text-center whitespace-nowrap align-baseline tracking-wider font-bold dark:bg-summary dark:bg-opacity-20 bg-dark bg-opacity-10 dark:text-white text-gray-900 rounded">{coin?.market_data?.total_supply?.toLocaleString()}</span>
                                 </div>
                                 <div className='flex items-center space-x-6'>
                                     <h2 className='text-sm'>Circulating Supply</h2>
-                                    <span className="text-xs inline-block py-2 px-2.5 leading-none text-center whitespace-nowrap align-baseline tracking-wider font-bold dark:bg-summary dark:bg-opacity-20 bg-dark bg-opacity-10 dark:text-white text-gray-900 rounded">{coin?.market_data?.circulating_supply.toLocaleString()}</span>
+                                    <span className="text-xs inline-block py-2 px-2.5 leading-none text-center whitespace-nowrap align-baseline tracking-wider font-bold dark:bg-summary dark:bg-opacity-20 bg-dark bg-opacity-10 dark:text-white text-gray-900 rounded">{coin?.market_data?.circulating_supply?.toLocaleString()}</span>
                                 </div>
                                 <div className='flex items-center space-x-6'>
                                     <h2 className='text-sm'>Website</h2>

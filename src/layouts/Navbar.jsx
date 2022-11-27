@@ -6,6 +6,8 @@ import Logo from '../assets/svg/logo.svg'
 import Usd from '../assets/svg/usd.svg'
 import UsdArrow from '../assets/svg/usdArrow.svg'
 import Search from '../assets/svg/search.svg'
+import SearchMobile from './SearchMobile'
+import SearchLarge from './SearchLarge'
 
 
 function Navbar() {
@@ -18,7 +20,7 @@ function Navbar() {
     //     <img src={Logo} alt="Coingetter" />
     //     Hello
     // </div>
-    <div className='overflow-hidden'>
+    <div className=''>
         <nav className="bg-inherit py-2">
             <div className="md:px-14 px-4 flex items-center justify-between text-sm ">
                 
@@ -43,28 +45,13 @@ function Navbar() {
                     <Link to='/' onClick={closeMenu}>
                         <div className='flex items-center'>
                             <img src={Logo} alt="Logo" className='lg:cursor-pointer h-12' />
-                            <h2 className='tracking-wider text-2xl'>CoinGetter</h2>
+                            <h2 className='tracking-wider text-lg'>CoinGetter</h2>
                         </div>
                     </Link>
                     <div className='flex items-center space-x-2 lg:hidden'>
-                        <button type="submit" className="w-8 h-8 rounded-full flex items-center justify-center">
-                            {/* <img src={Search} alt="search" /> */}
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="dark:text-white text-dark w-6 h-6">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
-                            </svg>
-                        </button>
+                        <SearchMobile />
 
-                        {/* <form action="" class="relative">
-                        <input type="search" 
-                                class="peer cursor-pointer relative z-10 h-8 w-8 rounded-full border bg-transparent pl-12 outline-none focus:w-full focus:cursor-text focus:border-lime-300 focus:pl-16 focus:pr-4" />
-                        <img 
-                            src={Search} 
-                            alt="search"
-                            class="absolute inset-y-0 my-auto h-8 w-12 border-r border-transparent stroke-gray-500 px-3.5 peer-focus:border-lime-300 peer-focus:stroke-lime-500" 
-                        />
-                        </form> */}
-
-                        <div className='text-3xl  rounded-md w-8 h-8' onClick={() => setOpen(!open)}>
+                        <div className='text-3xl px-1 rounded-md dark:bg-gray-700 bg-gray-500 flex' onClick={() => setOpen(!open)}>
                             <ion-icon name={`${open ? 'close' : 'menu'}`}></ion-icon>
                         </div>
                     </div>
@@ -73,15 +60,7 @@ function Navbar() {
                 {/* Large screen  */}
                 <ul className='lg:flex py-2 text-lg hidden items-center gap-8'>
                     <li>
-                        <div className="pt-2 flex items-center relative mx-auto dark:text-gray-500 text-tableDark">
-                            <input className="dark:bg-search bg-gray-900 dark:bg-opacity-20 h-10 px-5 pr-16 text-sm focus:outline-none" placeholder="Search coin name ..." />
-                            <button type="submit" className="absolute right-0 top-0 mt-5 mr-4 ">
-                                {/* <img src={Search} alt="search" /> */}
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="dark:text-white text-dark w-4 h-4">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
-                                </svg>
-                            </button>
-                        </div>
+                        <SearchLarge />
                     </li>
                     <li className='inline-block'>
                         Cryptocurrencies

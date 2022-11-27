@@ -22,10 +22,13 @@ function CoinDescription({coin}) {
                         {description}
                     </p> 
                     :
-                    <p>
+                    <p >
                         {description?.substr(0,500)}
                     </p> 
                 }
+                    {/* <p dangerouslySetInnerHTML={{__html:description}}>
+                        {description?.substr(0,500)}
+                    </p>  */}
             </div>
             <div className="flex justify-center">
                 <button 
