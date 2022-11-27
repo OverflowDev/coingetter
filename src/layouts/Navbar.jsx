@@ -45,7 +45,7 @@ function Navbar() {
                     <Link to='/' onClick={closeMenu}>
                         <div className='flex items-center'>
                             <img src={Logo} alt="Logo" className='lg:cursor-pointer h-12' />
-                            <h2 className='tracking-wider text-lg'>CoinGetter</h2>
+                            <h2 className='tracking-wider text-md'>CoinGetter</h2>
                         </div>
                     </Link>
                     <div className='flex items-center space-x-2 lg:hidden'>

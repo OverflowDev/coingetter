@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react'
+import { useContext, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import CoinContext from '../context/CoinContext'
 
@@ -12,6 +12,7 @@ function SearchLarge() {
     const handleFilter = (e) => {
         const searchWord = e.target.value
         setWordEntered(searchWord)
+
         const newFilter = coins.filter((value) => {
             return value?.name?.toLowerCase().includes(searchWord.toLowerCase())
         })
@@ -29,7 +30,7 @@ function SearchLarge() {
     }
 
   return (
-    <div className='relative' >
+    <div className='relative' onClick={clearInput} >
 
         <div className="pt-2 flex items-center relative mx-auto dark:text-gray-300 text-white">
             <input 
