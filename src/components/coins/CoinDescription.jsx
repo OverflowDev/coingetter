@@ -4,6 +4,10 @@ function CoinDescription({coin}) {
 
     const description = coin?.description?.en
 
+    function createMarkup() {
+        return {__html: description};
+      }
+
     const [isReadMore, setIsReadMore] = useState(false)
 
     const toggleReadMore = () => {
@@ -16,17 +20,13 @@ function CoinDescription({coin}) {
     <div>
         <div className='mt-12 mx-auto md:w-full md:max-w-2xl'>
             <h2 className='text-center md:text-5xl text-3xl uppercase tracking-wider border-b'>What is {coin.name}</h2>
-            <div className='leading-2 text-center mt-2'>
+            <div className='leading-2 text-center text-lg mt-2'>
                 {/* {coin?.description?.en} */}
-                {isReadMore ? <p>
-                        {description}
-                    </p> 
+                {isReadMore ? <p className='dark:[&>a]:text-lime-500 [&>a]:text-lime-600 text-bold tracking-wide' dangerouslySetInnerHTML={{__html: description}}></p> 
                     :
-                    <p >
-                        {description?.substr(0,500)}
-                    </p> 
+                    <p className='dark:[&>a]:text-lime-500 [&>a]:text-lime-600 text-bold tracking-wide' dangerouslySetInnerHTML={{__html: description?.substr(0,500)}}></p> 
                 }
-                    {/* <p dangerouslySetInnerHTML={{__html:description}}>
+                    {/* <p className='[&>a]:text-green' dangerouslySetInnerHTML={createMarkup()}>
                         {description?.substr(0,500)}
                     </p>  */}
             </div>

@@ -31,9 +31,9 @@ function Coin() {
     
     useEffect(() => {
         fetchCoin(params.id)
-        window.scrollTo(0, 0);
+        // window.scrollTo(0, 0);
       // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
+    }, [params.id])
     
     const homepages = coin?.links?.homepage
     const homepagesResults = homepages?.filter(element => {
@@ -59,22 +59,22 @@ function Coin() {
     if(!coin) return null
 
     return (
-    <div className='overflow-hidden h-full '>
+    <div className='overflow-hidden '>
         <Breadcrumbs coin={coin} />
         {loading ? 
             <div className='flex items-center justify-center h-screen'>
                 <img src={gif} alt="gif" className='h-12 w-12' />
             </div>
             :
-            <div className='md:px-12 px-4 mt-8'>
-                <div className='grid md:grid-cols-3'>
+            <div className=''>
+                <div className='grid md:grid-cols-3 grid-cols-2 md:px-12 px-2 mt-6'>
                     {/* Col 1  */}
                     <div className="col-span-2 ">
                         <div className="flex-col">
                             <span className="text-xs inline-block py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-semibold dark:bg-summary dark:bg-opacity-25 bg-dark text-white rounded">Rank #{coin.market_cap_rank}</span>
                             <div className='mt-4 flex items-center space-x-2 '>
-                                <div className='md:h-12 md:w-12 h-8 w-8 rounded-full bg-transparent border dark:border-gray-500 border-gray-800 flex items-center justify-center'>
-                                    <img src={coin?.image?.thumb} alt="bitcoin" className='md:h-8 md:w-8 h-6 w-6' />
+                                <div className='md:h-12 md:w-12 h-8 w-8 rounded-full border dark:border-gray-500 border-gray-800 flex items-center justify-center'>
+                                    <img src={coin?.image?.thumb} alt="bitcoin" className='md:h-8 md:w-8 h-4 w-4' />
                                 </div>
                                 <h2 className='text-lg font-bold '>{coin.name}</h2>
                                 <span className="text-xs inline-block py-1 px-2 leading-none text-center whitespace-nowrap align-baseline font-bold dark:bg-summary dark:bg-opacity-50 bg-dark bg-opacity-10 dark:text-white text-dark rounded uppercase">{coin.symbol} </span>
@@ -252,12 +252,12 @@ function Coin() {
                     {/* Col 1 Ends  */}
 
                     {/* Col 2  */}
-                    <div className=''>
-                        <div className=' text-md md:w-5/6 w-96 px-8 py-4 dark:bg-gray-700 bg-gray-300 bg-opacity-30 rounded hover:shadow-xl shadow-md md:mt-0 mt-12'>
+                    <div className='px-2'>
+                        <div className='text-md md:w-5/6 w-96 md:px-8 md:py-4 px-4 py-2 dark:bg-gray-700 bg-gray-300 bg-opacity-30 rounded hover:shadow-xl shadow-md md:mt-0 mt-12'>
 
                             <h2 className='text-center text-2xl font-semibold mb-6'>{coin.name} Price Statistics</h2>
 
-                            <div className='grid gap-4 mt-2'>
+                            <div className='md:grid md:gap-4 flex-wrap space-y-4 mt-2'>
                                 <div className='grid grid-cols-2 border-b border-gray-500'>
                                     <h2 className='font-semibold tracking-wide text-sm'>Bitcoin Price</h2>
                                     <h2 className=' text-end'>{coin?.market_data?.current_price.usd.toLocaleString("en-US", {style:"currency", currency:"USD"})}</h2>

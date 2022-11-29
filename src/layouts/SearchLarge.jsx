@@ -58,7 +58,7 @@ function SearchLarge() {
         </div>
 
         {filteredData.length !== 0 && (
-            <div className='scrollbar-hide overflow-hidden overflow-y-auto absolute top-14 left-5 w-52 h-24 rounded-lg py-2 dark:bg-gray-300 bg-gray-400 '>
+            <div className='scrollbar-hide overflow-hidden overflow-y-auto absolute top-14 left-5 w-52 h-24 rounded-lg py-2 dark:bg-summary bg-gray-400 '>
                 {filteredData?.slice(0,3).map((coin,i) => {
                     return (
                         <Link to={`/coin/${coin?.id}`} key={i} className='tracking-wider text-dark flex flex-col text-md dark:hover:bg-gray-400 hover:bg-gray-300 rounded px-2'>

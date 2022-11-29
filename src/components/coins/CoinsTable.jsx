@@ -112,62 +112,62 @@ function CoinsTable() {
                                             currentCoins.map((coin, i) => {
                                                 return (
                                                     <tr key={i} className='dark:bg-summary bg-tableDark dark:bg-opacity-10 bg-opacity-10 shadow-inner h-16'>
-                                                        <td className='dark:text-white text-sm font-light px-6 py-4 whitespace-nowrap '>
+                                                        <td className='dark:text-white text-sm  px-6 py-4 whitespace-nowrap '>
                                                             <div className='flex items-center ml-2 space-x-1'>
                                                                 <ion-icon name="star-outline"></ion-icon>
                                                                 <h1 className='text-md font-semibold'>{coin.market_cap_rank}</h1>
                                                             </div>
                                                         </td>
-                                                        <td className=' text-sm font-light px-6 py-4 whitespace-nowrap'>
+                                                        <td className=' text-sm  px-6 py-4 whitespace-nowrap'>
                                                             <div className='flex items-center space-x-3'>
                                                                 <div className='md:h-12 md:w-12 h-8 w-8 rounded-full bg-transparent border dark:border-gray-500 border-gray-800 flex items-center justify-center'>
                                                                     <img src={coin.image} alt="bitcoin" className='md:h-8 md:w-8 h-6 w-6' />
                                                                 </div>
                                                                 <div className='flex-col dark:text-gray-400 text-gray-800'>
                                                                     <h1 className='uppercase font-semibold md:text-md text-sm'>{coin.symbol}</h1>
-                                                                    <h1 className=' tracking-wide font-light md:text-md text-sm'>{coin.name}</h1>
+                                                                    <h1 className=' tracking-wide  md:text-md text-sm'>{coin.name}</h1>
                                                                 </div>
                                                             </div>
                                                         </td>
-                                                        <td className=' text-sm font-light px-6 py-4 whitespace-nowrap'>
+                                                        <td className=' text-sm  px-6 py-4 whitespace-nowrap'>
                                                             <h1 className='text-center'>{coin.current_price.toLocaleString("en-US", {style:"currency", currency:"USD"})}</h1>
                                                         </td>
-                                                        <td className=' text-sm font-light px-6 py-4 whitespace-nowrap'>
+                                                        <td className=' text-sm  px-6 py-4 whitespace-nowrap'>
                                                             <h1 className='text-center '>
                                                                 {
                                                                     coin.price_change_percentage_24h < 0 ? (
                                                                         <i className='dark:text-red-500 text-red-600 not-italic'>{coin.price_change_percentage_24h.toFixed(2)}%</i>
                                                                         ) : (
-                                                                        <i className='text-lightGreen not-italic'>{coin.price_change_percentage_24h.toFixed(2)}%</i>
+                                                                        <i className='text-deepGreen not-italic'>{coin.price_change_percentage_24h.toFixed(2)}%</i>
                                                                     )
                                                                 }
                                                             </h1>
                                                         </td>
-                                                        <td className=' text-sm font-light px-6 py-4 whitespace-nowrap'>
+                                                        <td className=' text-sm  px-6 py-4 whitespace-nowrap'>
                                                             <h1 className='text-center dark:text-red-500 text-red-600'>${coin.low_24h.toLocaleString()}</h1>
                                                         </td>
-                                                        <td className=' text-sm font-light px-6 py-4 whitespace-nowrap'>
-                                                            <h1 className='text-center dark:text-lightGreen text-green'>${coin.high_24h.toLocaleString()}</h1>
+                                                        <td className=' text-sm  px-6 py-4 whitespace-nowrap'>
+                                                            <h1 className='text-center dark:text-lightGreen text-deepGreen'>${coin.high_24h.toLocaleString()}</h1>
                                                         </td>
-                                                        <td className=' text-sm font-light px-6 py-4 whitespace-nowrap'>
+                                                        <td className=' text-sm  px-6 py-4 whitespace-nowrap'>
                                                             <h1 className='text-center'>${coin.ath.toLocaleString()}</h1>
                                                         </td>
-                                                        <td className=' text-sm font-light px-6 py-4 whitespace-nowrap'>
+                                                        <td className=' text-sm  px-6 py-4 whitespace-nowrap'>
                                                             <h1 className='text-center'>${coin.market_cap.toLocaleString()}</h1>
                                                         </td>
-                                                        <td className=' text-sm font-light px-6 py-4 whitespace-nowrap'>
+                                                        <td className=' text-sm  px-6 py-4 whitespace-nowrap'>
                                                             {/* <img src={Up} alt="Up" className='mx-auto' /> */}
                                                             <h1 className='text-center '>
                                                                 {
                                                                     coin.market_cap_change_percentage_24h < 0 ? (
                                                                         <i className='dark:text-red-500 text-red-600 not-italic'>{coin.market_cap_change_percentage_24h.toFixed(2)}%</i>
                                                                         ) : (
-                                                                        <i className='dark:text-lightGreen text-green not-italic'>{coin.market_cap_change_percentage_24h.toFixed(2)}%</i>
+                                                                        <i className='dark:text-lightGreen text-deepGreen not-italic'>{coin.market_cap_change_percentage_24h.toFixed(2)}%</i>
                                                                     )
                                                                 }
                                                             </h1>
                                                         </td>
-                                                        <td className='text-center text-sm font-light px-6 py-4 whitespace-nowrap'>
+                                                        <td className='text-center text-sm  px-6 py-4 whitespace-nowrap'>
                                                             <Link to={`/coin/${coin.id}`}>
                                                                 <button className='dark:bg-gray-600 bg-gray-400 h-8 w-8 rounded-full'>
                                                                     <ion-icon name="ellipsis-horizontal-outline"></ion-icon>

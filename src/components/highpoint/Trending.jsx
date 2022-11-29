@@ -1,4 +1,4 @@
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
 import CoinContext from '../../context/CoinContext'
 
@@ -8,8 +8,13 @@ import CoinContext from '../../context/CoinContext'
 
 function Trending() {
 
-    const {trending, loading} = useContext(CoinContext)
-    // const trends = trending?.coins
+    const {trending, loading, coins} = useContext(CoinContext)
+
+    const [trendPrice, setTrendPrice] = useState()
+
+
+    const btcPrice = coins[0]?.current_price
+    
     if(!trending) return null
 
   return (
@@ -82,12 +87,10 @@ function Trending() {
                                         <h1 className='tracking-wider md:text-md text-sm font-semibold'>{trend?.item.name}</h1>
                                     </div>
                                     <div className='flex py-2 md:px-3 space-x-4 dark:text-white'>
-                                        <h1 className='tracking-wider font-semibold md:text-md text-sm dark:text-lightGreen text-green'>{trend?.item.price_btc.toFixed(4)} btc</h1>
+                                        <h1 className='tracking-wider font-semibold md:text-md text-sm '>
+                                            ${(trend?.item?.price_btc * btcPrice).toFixed(3)}
+                                        </h1>
                                     </div>
-                                    {/* <div className='flex space-x-1 py-2 px-3'>
-                                        <img src={AGreen} alt="arrow" />
-                                        <h1 className='tracking-wider font-semibold text-lightGreen'>72%</h1>
-                                    </div> */}
                                 </Link>
                             </div>
                         )
