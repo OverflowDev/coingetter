@@ -32,9 +32,9 @@ function SearchLarge() {
   return (
     <div className='relative' onClick={clearInput} >
 
-        <div className="pt-2 flex items-center relative mx-auto dark:text-gray-300 text-white">
+        <div className="pt-2 flex items-center relative mx-auto">
             <input 
-                className="dark:bg-search bg-gray-800 dark:bg-opacity-20 h-10 px-5 pr-16 text-sm focus:outline-none" 
+                className="dark:bg-search bg-gray-600 dark:text-green text-white dark:bg-opacity-20 h-10 px-5 pr-16 text-sm focus:outline-none" 
                 placeholder="Search coin name ..." 
                 value={wordEntered}
                 onChange={handleFilter}
