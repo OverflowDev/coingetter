@@ -8,6 +8,7 @@ import UsdArrow from '../assets/svg/usdArrow.svg'
 import Search from '../assets/svg/search.svg'
 import SearchMobile from './SearchMobile'
 import SearchLarge from './SearchLarge'
+import SummaryNavbar from './SummaryNavbar'
 
 
 function Navbar() {
@@ -128,20 +129,28 @@ function Navbar() {
                     <li className='py-3 text-center px-3 text-2xl' onClick={closeMenu}>
                         Portfolio
                     </li>
+                    <li className='flex space-x-3 justify-center py-3' onClick={closeMenu}>
+                        <Link to='/login' className='py-2 flex items-center px-6  border-2 border-green'>
+                            Log In
+                        </Link>
+                    
+                        <Link to='/sign-up' className='py-2 flex items-center px-6 border-none bg-green'>
+                            Sign Up
+                        </Link>
+                    </li>
                     <li className='py-3 text-center px-3 text-2xl' onClick={closeMenu}>
                         <div className=''>
                             <Darkmode />
                         </div>
                     </li>
-                    {/* <li>
-                        <button className='bg-lime-300 py-1 px-4 rounded-full text-gray-700 uppercase' onClick={closeMenu}>
-                            Connect Wallet to have access
-                        </button>
-                    </li> */}
                     
                 </ul>
             </div>
         </nav>
+
+        <div>
+            <SummaryNavbar />
+        </div>
     </div>
   )
 }

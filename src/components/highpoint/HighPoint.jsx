@@ -21,7 +21,7 @@ function HighPoint() {
     <div className='lg:p-10 p-12 md:px-14 px-4'>
         {/* <div className='mb-4'> */}
         <div className="flex items-center justify-end lg:justify-start mb-4">
-            <h1 className='text-lg font-bold mr-2'>HighLight</h1>
+            <h1 className='text-lg font-bold mr-2'>HighLights</h1>
             <div
                 className="md:w-14 md:h-7 w-12 h-6 flex items-center bg-gray-300 rounded-full p-1 cursor-pointer"
                 onClick={() => {

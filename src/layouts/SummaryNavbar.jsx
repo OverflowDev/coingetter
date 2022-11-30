@@ -1,4 +1,5 @@
 import { useContext } from 'react'
+import { Link } from 'react-router-dom'
 
 import CoinContext from '../context/CoinContext'
 
@@ -213,12 +214,12 @@ function SummaryNavbar() {
         
         {/* Login and SignUp  */}
         <div className='lg:flex gap-2 hidden'>
-            <button className='py-2 flex items-center px-6  border-2 border-green'>
+            <Link to='/login' className='py-2 flex items-center px-6  border-2 border-green hover:bg-gray-700'>
                 Log In
-            </button>
-            <button className='py-2 flex items-center px-6 border-none bg-green'>
+            </Link>
+            <Link to='/sign-up' className='py-2 flex items-center px-6 border-none bg-green hover:bg-deepGreen'>
                 Sign Up
-            </button>
+            </Link>
         </div>
 
     </div>

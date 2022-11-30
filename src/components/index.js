@@ -7,6 +7,12 @@ export {default as Coin} from './coins/Coin'
 
 export {default as Footer} from '../layouts/Footer'
 export {default as FooterOne} from '../layouts/FooterOne'
+
+export {default as Login} from '../components/auth/Login'
+export {default as Register} from '../components/auth/Register'
+
+export {default as ErrorPage} from '../layouts/ErrorPage'
+
 // export {default as Hero} from './Hero'
 // export {default as HighPoint} from './highpoint/HighPoint'
 

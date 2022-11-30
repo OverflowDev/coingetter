@@ -9,6 +9,8 @@ import gif from '../../assets/png/spinner.gif'
 import ShareModal from '../../layouts/ShareModal'
 import CoinDescription from './CoinDescription'
 import Breadcrumbs from '../../layouts/Breadcrumbs'
+import Navbar from '../../layouts/Navbar'
+import Footer from '../../layouts/Footer'
 
 function Coin() {
 
@@ -60,6 +62,7 @@ function Coin() {
 
     return (
     <div className='overflow-hidden '>
+        <Navbar />
         <Breadcrumbs coin={coin} />
         {loading ? 
             <div className='flex items-center justify-center h-screen'>
@@ -312,6 +315,7 @@ function Coin() {
                 <CoinDescription coin={coin} />
             </div>
         }
+        <Footer />
         {/* Modal  */}
         <ShareModal onClose={handleOnClose} visible={showModal} />
     </div>
