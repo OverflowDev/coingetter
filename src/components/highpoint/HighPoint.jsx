@@ -72,7 +72,7 @@ function HighPoint() {
                     </div>
                 {/* } */}
                 {/* Ads  */}
-                <div className='lg:flex md:hidden rounded lg:h-64 lg:w-full dark:bg-gray-800 bg-gray-200 shadow-inner'>
+                <div className='lg:flex md:hidden rounded lg:h-64 lg:w-full md:h-64 md:w-full'>
                     {/* <Ads /> */}
                     <img src={ads} alt="ads" className='object-cover lg:h-64 lg:w-full rounded' />
                 </div>

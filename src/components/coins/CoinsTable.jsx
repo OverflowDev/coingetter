@@ -50,7 +50,7 @@ function CoinsTable() {
                                             <th scope="col" className='text-sm font-semibold tracking-wider uppercase'>Ath</th>
                                             <th scope="col" className='text-sm font-semibold tracking-wider uppercase'>Market Cap</th>
                                             <th scope="col" className='text-sm font-semibold tracking-wider uppercase'>Market Cap (24h %)</th>
-                                            <th scope="col" className='text-sm font-semibold tracking-wider uppercase'></th>
+                                            <th scope="col" className='text-sm font-semibold tracking-wider uppercase'>More</th>
                                         </tr>
                                     }
                                 </thead>
