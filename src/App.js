@@ -1,5 +1,5 @@
 import {BrowserRouter as Router, Routes, Route, useLocation} from 'react-router-dom'
-import { useState } from 'react';
+// import { useState } from 'react';
 
 // import {Navbar, SummaryNavbar, Hero, HighPoint, Coins, Coin, Subscription, Footer, FooterOne} from './components'
 import {Home, Navbar, Coin, Footer, Login, Register, ErrorPage} from './components'
@@ -8,10 +8,10 @@ import { CoinProvider } from './context/CoinContext';
 
 function App() {
 
-  const [showNav, setShowNav] = useState(true)
-  const [showFooter, setShowFooter] = useState(true)
+  // const [showNav, setShowNav] = useState(true)
+  // const [showFooter, setShowFooter] = useState(true)
 
-  const pathname = window.location.pathname
+  // const pathname = window.location.pathname
 
   return (
       <CoinProvider>
